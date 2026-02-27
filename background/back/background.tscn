@@ -74,10 +74,9 @@ texture = ExtResource("1_ht07d")
 [sub_resource type="TileSet" id="TileSet_r3oqu"]
 sources/0 = SubResource("TileSetAtlasSource_4pk2o")
 
-[node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("tile")]
+[node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("tile", "marker")]
 tile_set = SubResource("TileSet_r3oqu")
 format = 2
 script = ExtResource("2_o35lf")
 tile = NodePath(".")
-
-[node name="Timer" type="Timer" parent="." unique_id=27666550]
+marker = NodePath("")
