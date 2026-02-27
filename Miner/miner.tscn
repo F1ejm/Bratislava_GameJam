@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bkh1l86ybykfh"]
+
+[ext_resource type="Script" uid="uid://b65wqngnhjbyb" path="res://Miner/miner.gd" id="1_qjko8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2degd"]
+
+[node name="Miner" type="CharacterBody2D" unique_id=543357979]
+motion_mode = 1
+script = ExtResource("1_qjko8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=178859463]
+shape = SubResource("CircleShape2D_2degd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1998998221]
+position = Vector2(0, 14.81)
+scale = Vector2(0.615, 0.615)
+shape = SubResource("CircleShape2D_2degd")
