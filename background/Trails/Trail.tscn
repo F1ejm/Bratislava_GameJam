@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlwqgq3s82vfb"]
 
-[ext_resource type="Script" uid="uid://d31ihke7lpypw" path="res://background/Trails/Ground.gd" id="1_fy6wo"]
+[ext_resource type="Script" uid="uid://d31ihke7lpypw" path="res://background/Trails/Trail.gd" id="1_fy6wo"]
 [ext_resource type="Texture2D" uid="uid://xq7dhec046le" path="res://grafiki/Sprite-0001.png" id="1_v51hn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_turm7"]
@@ -30,6 +30,8 @@ sources/0 = SubResource("TileSetAtlasSource_turm7")
 [node name="Trail" type="TileMap" unique_id=368303599 node_paths=PackedStringArray("tile")]
 tile_set = SubResource("TileSet_w8d6i")
 format = 2
-layer_0/tile_data = PackedInt32Array(65537, 0, 0, 131073, 0, 0, 131074, 0, 0, 65538, 0, 0, 131078, 196608, 0, 196614, 196608, 0, 196615, 196608, 0, 131079, 196608, 0)
+layer_0/tile_data = PackedInt32Array(393215, 0, 0, 327680, 0, 0, 393216, 0, 0, 458751, 0, 0, 327682, 131072, 0, 393218, 131072, 0, 393219, 131072, 0, 327683, 131072, 0)
 script = ExtResource("1_fy6wo")
 tile = NodePath(".")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1831079814]

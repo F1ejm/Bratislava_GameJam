@@ -3,7 +3,7 @@ extends Node2D
 var mouse: Vector2i
 
 @export var tile :TileMap
-
+@export var player : CharacterBody2D
 
 func _process(delta: float) -> void:
 	var clicked_cell = tile.local_to_map(tile.get_local_mouse_position())

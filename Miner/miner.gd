@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	
 	torotation = atan2(direction.y, direction.x) - PI/2
 	
-	print(currentSPEED)
+	#print(currentSPEED)
 	
 	self.rotation= rotate_toward(self.rotation,torotation,delta *3)
 	

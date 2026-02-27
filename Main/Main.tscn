@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://daag6pqlwuqvh"]
 
-[ext_resource type="PackedScene" uid="uid://dlwqgq3s82vfb" path="res://Trails/Trail.tscn" id="1_lxy7q"]
+[ext_resource type="PackedScene" uid="uid://dlwqgq3s82vfb" path="res://background/Trails/Trail.tscn" id="1_lxy7q"]
 [ext_resource type="PackedScene" uid="uid://bkh1l86ybykfh" path="res://Miner/miner.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://bbnb0dj0jfa7e" path="res://background/back/background.tscn" id="3_amygn"]
 
 [node name="Main" type="Node2D" unique_id=2043031081]
-
-[node name="Trail" parent="." unique_id=368303599 instance=ExtResource("1_lxy7q")]
 
 [node name="Miner" parent="." unique_id=543357979 instance=ExtResource("2_83ytx")]
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1279858724]
+
+[node name="Trail" parent="." unique_id=368303599 node_paths=PackedStringArray("player") instance=ExtResource("1_lxy7q")]
+player = NodePath("../Miner")
+
+[node name="background" parent="." unique_id=2010711369 node_paths=PackedStringArray("player") instance=ExtResource("3_amygn")]
+player = NodePath("../Miner")
