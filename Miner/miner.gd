@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		
 	direction.y += 35
 	
-	currentSPEED += (0.15 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50
+	currentSPEED += (0.35 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50
 	
 	if (currentSPEED < minSPEED):
 		currentSPEED = minSPEED
@@ -30,7 +30,9 @@ func _physics_process(delta: float) -> void:
 	
 	self.rotation= rotate_toward(self.rotation,torotation,delta *3)
 	
-	player_camera.position = lerp(player_camera.position, Vector2(self.position.x, self.position.y), 0.02)
+	player_camera.position.x = lerp(player_camera.position.x,self.position.x, 0.02 - ((currentSPEED / maxSPEED) * 0.01))
+	
+	player_camera.position.y = lerp(player_camera.position.y,self.position.y, 0.02 + ((currentSPEED / maxSPEED) * 0.05))
 	
 	velocity = Vector2.RIGHT.rotated(self.rotation + PI/2) * currentSPEED
 	
