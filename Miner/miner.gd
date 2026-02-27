@@ -8,6 +8,9 @@ var torotation = 0
 
 @onready var player_camera: Camera2D = $"../PlayerCamera"
 
+func _ready() -> void:
+	for i in range(0,10):
+		spawnTail()
 
 func _physics_process(delta: float) -> void:
 	
@@ -35,5 +38,13 @@ func _physics_process(delta: float) -> void:
 	player_camera.position.y = lerp(player_camera.position.y,self.position.y, 0.02 + ((currentSPEED / maxSPEED) * 0.05))
 	
 	velocity = Vector2.RIGHT.rotated(self.rotation + PI/2) * currentSPEED
-	
+	$TailSP.global_rotation = 0
 	move_and_slide()
+	
+func spawnTail():
+	if($TailSP.get_children().is_empty()):
+		var scene := preload("res://Miner/tail.tscn")
+		var tail := scene.instantiate()
+		$TailSP.add_child(tail)
+	else:
+		$TailSP.get_child(0).spawnTail()

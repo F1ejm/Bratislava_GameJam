@@ -15,3 +15,6 @@ shape = SubResource("CircleShape2D_2degd")
 position = Vector2(0, 14.81)
 scale = Vector2(0.615, 0.615)
 shape = SubResource("CircleShape2D_2degd")
+
+[node name="TailSP" type="Node2D" parent="." unique_id=1198123025]
+position = Vector2(0, -15)
