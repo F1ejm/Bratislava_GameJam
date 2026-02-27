@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Bratislava"
+run/main_scene="uid://daag6pqlwuqvh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

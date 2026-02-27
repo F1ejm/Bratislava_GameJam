@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://daag6pqlwuqvh"]
 
-[node name="main" type="Node2D" unique_id=2043031081]
+[ext_resource type="PackedScene" uid="uid://dlwqgq3s82vfb" path="res://Trails/Trail.tscn" id="1_lxy7q"]
 
-[node name="Control" type="Control" parent="." unique_id=231844163]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Main" type="Node2D" unique_id=2043031081]
+
+[node name="Trail" parent="." unique_id=368303599 instance=ExtResource("1_lxy7q")]
