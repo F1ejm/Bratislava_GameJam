@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bbnb0dj0jfa7e"]
+
+[ext_resource type="Texture2D" uid="uid://cfiiias70kjk5" path="res://grafiki/tilemap2.png" id="1_ht07d"]
+[ext_resource type="Script" uid="uid://btxel3biohfjm" path="res://background/back/background.gd" id="2_o35lf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pk2o"]
+resource_name = "Back"
+texture = ExtResource("1_ht07d")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r3oqu"]
+sources/0 = SubResource("TileSetAtlasSource_4pk2o")
+
+[node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("detector", "tile")]
+tile_set = SubResource("TileSet_r3oqu")
+format = 2
+script = ExtResource("2_o35lf")
+detector = NodePath("VisibleOnScreenNotifier2D")
+tile = NodePath(".")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1134286148]
+rect = Rect2(-2, -2, 4, 4)

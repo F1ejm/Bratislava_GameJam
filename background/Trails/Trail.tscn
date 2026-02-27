@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlwqgq3s82vfb"]
 
-[ext_resource type="Script" uid="uid://d31ihke7lpypw" path="res://Trails/Ground.gd" id="1_fy6wo"]
+[ext_resource type="Script" uid="uid://d31ihke7lpypw" path="res://background/Trails/Ground.gd" id="1_fy6wo"]
 [ext_resource type="Texture2D" uid="uid://xq7dhec046le" path="res://grafiki/Sprite-0001.png" id="1_v51hn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_turm7"]
