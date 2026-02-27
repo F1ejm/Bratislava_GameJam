@@ -74,15 +74,10 @@ texture = ExtResource("1_ht07d")
 [sub_resource type="TileSet" id="TileSet_r3oqu"]
 sources/0 = SubResource("TileSetAtlasSource_4pk2o")
 
-[node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("detector", "tile")]
+[node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("tile")]
 tile_set = SubResource("TileSet_r3oqu")
 format = 2
 script = ExtResource("2_o35lf")
-detector = NodePath("VisibleOnScreenNotifier2D")
 tile = NodePath(".")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1134286148]
-rect = Rect2(-2, -2, 4, 4)
-
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="detector_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="detector_exited"]
+[node name="Timer" type="Timer" parent="." unique_id=27666550]
