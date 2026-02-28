@@ -235,7 +235,3 @@ tile_set = SubResource("TileSet_r3oqu")
 format = 2
 script = ExtResource("2_o35lf")
 tile = NodePath(".")
-
-[node name="Timer" type="Timer" parent="." unique_id=1980483264]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
