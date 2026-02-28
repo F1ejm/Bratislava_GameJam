@@ -28,32 +28,37 @@ func refresh():
 				currentcollumn = item_column_3
 		match currentitem:
 			"Faster Sterring":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/plus_skret.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = false
 			"Slow Down!!!":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/minus_speed.png")
+				currentcollumn.itemname = currentitem
+				currentcollumn.itemdesc = "null"
+				currentcollumn.isActive = false
+			"Money!":
+				currentcollumn.itemimage = preload("res://grafiki/boosts/plus_score.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = false
 			"Better Luck":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/plus_rudy.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = false
 			"The Rock":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/minus_kamienie.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = false
 			"Brakes":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/hamulec.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = true
 			"Invicibility":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/invincibility.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = true
@@ -63,7 +68,7 @@ func refresh():
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive =true
 			"SPEEEEEEED!!!":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/rozpierdol.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive =true

@@ -56,6 +56,11 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_count = 16
 
+[sub_resource type="Gradient" id="Gradient_jklhs"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6ed8r"]
+gradient = SubResource("Gradient_jklhs")
+
 [node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim")]
 motion_mode = 1
 script = ExtResource("1_qjko8")
@@ -88,6 +93,13 @@ texture = SubResource("GradientTexture2D_jklhs")
 texture_scale = 1.19
 height = 830.0
 
+[node name="PointLight2D2" type="PointLight2D" parent="Node2D" unique_id=567851072]
+position = Vector2(-0.5, 25.5)
+scale = Vector2(0.984375, 1.796875)
+enabled = false
+color = Color(1.2706864, 0.455, 0.4628431, 1)
+texture = SubResource("GradientTexture2D_6ed8r")
+
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1756662190]
 position = Vector2(0, 43)
 amount = 13
@@ -103,3 +115,9 @@ initial_velocity_max = 312.5
 scale_amount_min = 4.0
 scale_amount_max = 12.0
 color = Color(0.5436707, 0.30170706, 0.17548245, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1691136412]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

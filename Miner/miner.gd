@@ -20,13 +20,19 @@ var SecAciteveItem: String
 var ThiAciteveItem: String
 var ActiveFull: bool = false
 
+var nextUpgrade: int = 100
+var currentLevel: int = 1
+
 var IsFalling: bool = false
+
+var warning : bool = true
 
 @export var anim : AnimationPlayer
 
 @onready var player_camera: Camera2D = $"../PlayerCamera"
 
 func _ready() -> void:
+	global_position.x = 3500
 	anim.play("drill")
 	for i in range(0,20):
 		spawnTail(1)
@@ -47,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	direction.y += 35
 	#print(direction)
 	if(IsFalling):
-		currentSPEED += delta * 50
+		currentSPEED += delta * 150
 	else:
 		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50 * (1 + upgspeed/10))
 	
@@ -63,7 +69,7 @@ func _physics_process(delta: float) -> void:
 	$Node2D/PointLight2D.global_rotation += delta *3
 	
 	if IsFalling:
-		torotation = lerp(self.rotation, 0.0, delta)
+		torotation = lerp(self.rotation, 0.0, delta * 2)
 	
 	self.rotation= rotate_toward(self.rotation,torotation,delta * (3 + upgturn))
 	
@@ -89,9 +95,10 @@ func _physics_process(delta: float) -> void:
 	
 	#print(Global.score)
 	
-	if (Global.score % 20 > 5 and Global.score > 20):
+	if (Global.score > nextUpgrade):
 		upgradesmenuopen()
-		#IsFalling = true
+		currentLevel += 2
+		nextUpgrade += currentLevel * 200
 	
 	move_and_slide()
 
@@ -126,3 +133,4 @@ func spawnTail(number: int):
 		$TailSP.add_child(tail)
 	else:
 		$TailSP.get_child(0).spawnTail(number+1)
+		

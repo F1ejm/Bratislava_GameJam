@@ -1,11 +1,42 @@
 [gd_scene format=3 uid="uid://bwixap0f7ovkb"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s31xd"]
-radius = 50.0
+[ext_resource type="Script" uid="uid://cy3kpogxebgwl" path="res://Main/stone.gd" id="1_g5l2f"]
+[ext_resource type="Texture2D" uid="uid://bdig6wg61tuo1" path="res://grafiki/rock1.png" id="1_yveq7"]
+[ext_resource type="Texture2D" uid="uid://cy276xft5eyfi" path="res://grafiki/rock2.png" id="2_g5l2f"]
+[ext_resource type="Texture2D" uid="uid://dt23x88tuc512" path="res://grafiki/rock3.png" id="3_w23k6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1l3w4"]
+radius = 14.055
+height = 28.11
 
 [node name="Stone" type="Node2D" unique_id=1802670844]
+script = ExtResource("1_g5l2f")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1539757182]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1885684128]
-shape = SubResource("CircleShape2D_s31xd")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=515438229]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_1l3w4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=937376122]
+texture_filter = 1
+position = Vector2(1, 2)
+texture = ExtResource("1_yveq7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1031291733]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_1l3w4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2" unique_id=377984047]
+texture_filter = 1
+position = Vector2(-1, -1)
+texture = ExtResource("2_g5l2f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=606666662]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_1l3w4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D3" unique_id=1820805480]
+texture_filter = 1
+position = Vector2(-0.24, 2)
+texture = ExtResource("3_w23k6")
