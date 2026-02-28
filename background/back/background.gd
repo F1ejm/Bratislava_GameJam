@@ -23,6 +23,6 @@ func _ready() -> void:
 		for w in width:
 			tile.set_cell(0,Vector2i(w,h),0,Vector2(randi_range(0,7),randi_range(2,7)),0)
 	for h in 60:
-		tile.set_cell(0,Vector2i(-1,player.position.y + h),4,Vector2i(3,randi_range(0,7)),0)
-		tile.set_cell(0,Vector2i(80,player.position.y + h),3,Vector2i(0,randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-1, h),4,Vector2i(3,randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(80, h),3,Vector2i(0,randi_range(0,7)),0)
 	

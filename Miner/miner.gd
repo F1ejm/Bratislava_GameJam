@@ -36,7 +36,7 @@ var warning : bool = true
 
 func _ready() -> void:
 	global_position.x = 3500
-	global_position.y -= 100
+	
 	anim.play("drill")
 	for i in range(0,20):
 		spawnTail(1)
