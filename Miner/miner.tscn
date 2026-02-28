@@ -61,7 +61,7 @@ metadata/_snap_count = 16
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6ed8r"]
 gradient = SubResource("Gradient_jklhs")
 
-[node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim", "iskry", "iskry1")]
+[node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim", "iskry", "iskry1") groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_qjko8")
 anim = NodePath("AnimationPlayer")

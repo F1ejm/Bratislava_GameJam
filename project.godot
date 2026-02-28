@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*uid://bilox65ngpou6"
 
+[global_group]
+
+Player=""
+
 [input]
 
 mouse_click={

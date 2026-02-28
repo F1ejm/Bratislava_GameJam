@@ -117,10 +117,11 @@ texture = ExtResource("13_r2ac1")
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1865487638]
-position = Vector2(3498, -485)
+position = Vector2(3498, -313)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1038489944]
 position = Vector2(0, 57)
 shape = SubResource("RectangleShape2D_qd626")
 
 [connection signal="timeout" from="Miner/OreSpawner/Timer" to="Miner/OreSpawner" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
