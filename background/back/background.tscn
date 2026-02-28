@@ -1,21 +1,16 @@
 [gd_scene format=3 uid="uid://bbnb0dj0jfa7e"]
 
-[ext_resource type="Texture2D" uid="uid://cfiiias70kjk5" path="res://grafiki/tilemap2.png" id="1_ht07d"]
+[ext_resource type="Texture2D" uid="uid://b12sbw66xwsfl" path="res://grafiki/tilemap1.png" id="1_ht07d"]
 [ext_resource type="Script" uid="uid://btxel3biohfjm" path="res://background/back/background.gd" id="2_o35lf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pk2o"]
-resource_name = "Back"
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o35lf"]
 texture = ExtResource("1_ht07d")
-0:0/0 = 0
-1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
@@ -72,7 +67,7 @@ texture = ExtResource("1_ht07d")
 7:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_r3oqu"]
-sources/0 = SubResource("TileSetAtlasSource_4pk2o")
+sources/0 = SubResource("TileSetAtlasSource_o35lf")
 
 [node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("tile")]
 scale = Vector2(5, 5)
