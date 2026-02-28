@@ -30,7 +30,7 @@ var warning : bool = true
 
 @export var iskry :CPUParticles2D
 @export var iskry1 : CPUParticles2D
-
+@export var main : Node2D
 @export var area :Area2D
 
 
@@ -166,3 +166,4 @@ func _on_timer_timeout() -> void:
 func body_entered(body: Node2D) -> void:
 	if body.is_in_group("Kamien"):
 		iskra()
+		main.add_trauma(2)
