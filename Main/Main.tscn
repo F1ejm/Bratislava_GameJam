@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bbnb0dj0jfa7e" path="res://background/back/background.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://yxfr0kw4eqgt" path="res://Main/StoneSpawner.tscn" id="4_ps1la"]
 [ext_resource type="PackedScene" uid="uid://b4xyqh8b3xpph" path="res://UI/upgrade.tscn" id="5_6aewd"]
+[ext_resource type="Texture2D" uid="uid://devg5dioucfib" path="res://grafiki/budynek.png" id="8_h5g1y"]
+[ext_resource type="Texture2D" uid="uid://btt8gfwa2nhbs" path="res://grafiki/dzwig.png" id="9_qd626"]
+[ext_resource type="Texture2D" uid="uid://45d8ie3hfcq6" path="res://grafiki/komin2.png" id="10_6ivxk"]
+[ext_resource type="Texture2D" uid="uid://bmyp4flim8bow" path="res://grafiki/pixil-frame-0_8.png" id="11_6yo1i"]
+[ext_resource type="Texture2D" uid="uid://duu4wvyhme6uk" path="res://grafiki/rampa.png" id="12_lrfe7"]
+[ext_resource type="Texture2D" uid="uid://c27wef3lmgtss" path="res://grafiki/2 domek.png" id="13_r2ac1"]
 
 [node name="Main" type="Node2D" unique_id=2043031081]
 script = ExtResource("1_u2i7p")
@@ -25,6 +31,7 @@ player = NodePath("../Miner")
 mark = NodePath("../Miner/Marker2D")
 
 [node name="Miner" parent="." unique_id=543357979 instance=ExtResource("2_83ytx")]
+position = Vector2(1, 1)
 
 [node name="StoneSpawner" parent="Miner" unique_id=870286894 instance=ExtResource("4_ps1la")]
 
@@ -41,3 +48,43 @@ zoom = Vector2(0.7, 0.7)
 
 [node name="Upgrade" parent="CanvasLayer" unique_id=592570759 instance=ExtResource("5_6aewd")]
 visible = false
+
+[node name="Budynek" type="Sprite2D" parent="." unique_id=841508329]
+self_modulate = Color(0.98, 0.735, 0.735, 1)
+texture_filter = 1
+position = Vector2(-175, -296.00003)
+scale = Vector2(6.805555, 6.805555)
+texture = ExtResource("8_h5g1y")
+
+[node name="Dzwig" type="Sprite2D" parent="." unique_id=94333824]
+texture_filter = 1
+position = Vector2(-287, -395)
+scale = Vector2(5.1749997, 5.1749997)
+texture = ExtResource("9_qd626")
+
+[node name="Komin2" type="Sprite2D" parent="." unique_id=1804534970]
+texture_filter = 1
+position = Vector2(858.9999, -359)
+scale = Vector2(6.5625, 6.5625)
+texture = ExtResource("10_6ivxk")
+
+[node name="PixilFrame08" type="Sprite2D" parent="." unique_id=1800816549]
+texture_filter = 1
+position = Vector2(196, -350)
+scale = Vector2(8.125, 8.125)
+texture = ExtResource("11_6yo1i")
+
+[node name="Rampa" type="Sprite2D" parent="." unique_id=98880928]
+z_index = -1
+texture_filter = 1
+position = Vector2(555, -384.00003)
+scale = Vector2(5.4375, 5.4375)
+texture = ExtResource("12_lrfe7")
+
+[node name="2Domek" type="Sprite2D" parent="." unique_id=1444202637]
+self_modulate = Color(1, 1, 1, 0.78431374)
+texture_filter = 1
+position = Vector2(350, -283)
+scale = Vector2(5.9888887, 5.9888887)
+texture = ExtResource("13_r2ac1")
+flip_h = true
