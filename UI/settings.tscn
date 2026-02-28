@@ -4,53 +4,90 @@
 [ext_resource type="Script" uid="uid://jqogdknatcnw" path="res://UI/settings.gd" id="1_wgjsl"]
 [ext_resource type="Theme" uid="uid://gpf6etjyd5li" path="res://grafiki/ui/ui_theme.tres" id="2_vbc7n"]
 [ext_resource type="Texture2D" uid="uid://cs0mkxf3dgpki" path="res://grafiki/ui/back_normal.png" id="4_lgafb"]
+[ext_resource type="Script" uid="uid://ceth774hd2w2a" path="res://UI/button.gd" id="5_q4n24"]
 [ext_resource type="Texture2D" uid="uid://eq8o84nx4ts8" path="res://grafiki/ui/back_pressed.png" id="5_ww78k"]
 [ext_resource type="Texture2D" uid="uid://cxb3inv7u6vr8" path="res://grafiki/ui/back_hover.png" id="6_q4n24"]
+[ext_resource type="Texture2D" uid="uid://bdig6wg61tuo1" path="res://grafiki/rock1.png" id="8_xm7q0"]
+[ext_resource type="Texture2D" uid="uid://cy276xft5eyfi" path="res://grafiki/rock2.png" id="9_5scca"]
+[ext_resource type="Texture2D" uid="uid://dt23x88tuc512" path="res://grafiki/rock3.png" id="10_ridfr"]
+[ext_resource type="Texture2D" uid="uid://b32jjdyntqtlu" path="res://grafiki/ore2.png" id="11_njvuc"]
+[ext_resource type="Texture2D" uid="uid://uhbstf0hjg3w" path="res://grafiki/ore3.png" id="12_bwged"]
+[ext_resource type="Texture2D" uid="uid://qvh02e7njihf" path="res://grafiki/ore5.png" id="13_8kp5s"]
+[ext_resource type="Texture2D" uid="uid://blx2341l0nsf2" path="res://grafiki/boosts/plus_score.png" id="14_dfquu"]
+[ext_resource type="Texture2D" uid="uid://bumchf01wy7be" path="res://grafiki/boosts/minus_kamienie.png" id="15_vfocj"]
+[ext_resource type="Texture2D" uid="uid://112abwjafr5r" path="res://grafiki/boosts/rozpierdol.png" id="16_hm5nf"]
 
 [node name="Settings" type="Control" unique_id=2145115873]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -576.0
-offset_bottom = -324.0
+offset_left = -19.0
+offset_top = 10.0
+offset_right = -19.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 script = ExtResource("1_wgjsl")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1565042403]
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1045560298]
+texture_filter = 1
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -174.5
+offset_top = -96.0
+offset_right = 174.5
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_lgafb")
+texture_pressed = ExtResource("5_ww78k")
+texture_hover = ExtResource("6_q4n24")
+stretch_mode = 5
+script = ExtResource("5_q4n24")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=383983042]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -174.5
-offset_top = -102.0
-offset_right = 174.5
-offset_bottom = 102.0
+offset_left = -448.0
+offset_top = -170.0
+offset_right = 416.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1565042403]
+layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1786263688]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1786263688]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1_7iqql")
-text = "Master Volume:"
+text = "Master Volume:       "
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1073432222]
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer" unique_id=1073432222]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_vbc7n")
 value = 53.0
 
-[node name="Label2" type="Label" parent="VBoxContainer" unique_id=530106621]
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=530106621]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -59,12 +96,12 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1_7iqql")
 text = "Music Volume:"
 
-[node name="HSlider2" type="HSlider" parent="VBoxContainer" unique_id=1297482991]
+[node name="HSlider2" type="HSlider" parent="HBoxContainer/VBoxContainer" unique_id=1297482991]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_vbc7n")
 
-[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1280943560]
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1280943560]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -73,21 +110,97 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1_7iqql")
 text = "SFX Volume:"
 
-[node name="HSlider3" type="HSlider" parent="VBoxContainer" unique_id=65756741]
+[node name="HSlider3" type="HSlider" parent="HBoxContainer/VBoxContainer" unique_id=65756741]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_vbc7n")
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=1045560298]
-texture_filter = 1
-custom_minimum_size = Vector2(128, 32)
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1292162639]
 layout_mode = 2
-texture_normal = ExtResource("4_lgafb")
-texture_pressed = ExtResource("5_ww78k")
-texture_hover = ExtResource("6_q4n24")
-stretch_mode = 5
+theme_override_constants/separation = 32
+alignment = 1
 
-[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/HSlider3" to="." method="_on_h_slider_3_value_changed"]
-[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1170957517]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.6627451, 0.17254902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("1_7iqql")
+theme_override_font_sizes/font_size = 32
+text = "TUTORIAL"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=156761835]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7iqql")
+text = "Avoid the rocks.
+
+Collect different ores
+to improve your highscore.
+
+Collect power ups to help 
+with your run.
+
+And most importantly, have fun!"
+
+[node name="Rock1" type="Sprite2D" parent="." unique_id=1814226196]
+texture_filter = 1
+position = Vector2(792, 282.00003)
+scale = Vector2(2.46875, 2.3437493)
+texture = ExtResource("8_xm7q0")
+
+[node name="Rock2" type="Sprite2D" parent="." unique_id=578990108]
+texture_filter = 1
+position = Vector2(852, 274)
+scale = Vector2(2.0156264, 1.9374995)
+texture = ExtResource("9_5scca")
+
+[node name="Rock3" type="Sprite2D" parent="." unique_id=1712580147]
+texture_filter = 1
+position = Vector2(927, 279)
+scale = Vector2(2.0625, 1.96875)
+texture = ExtResource("10_ridfr")
+
+[node name="Ore2" type="Sprite2D" parent="." unique_id=242841089]
+texture_filter = 1
+position = Vector2(940.99994, 330)
+scale = Vector2(1.71875, 1.71875)
+texture = ExtResource("11_njvuc")
+
+[node name="Ore3" type="Sprite2D" parent="." unique_id=1486374723]
+texture_filter = 1
+position = Vector2(997.2501, 330)
+scale = Vector2(1.7343764, 1.6874992)
+texture = ExtResource("12_bwged")
+
+[node name="Ore5" type="Sprite2D" parent="." unique_id=408822499]
+texture_filter = 1
+position = Vector2(1052.75, 330.25006)
+scale = Vector2(1.7656193, 1.7656257)
+texture = ExtResource("13_8kp5s")
+
+[node name="PlusScore" type="Sprite2D" parent="." unique_id=1570153897]
+texture_filter = 1
+position = Vector2(933.9999, 389)
+scale = Vector2(1.8615783, 1.8271598)
+texture = ExtResource("14_dfquu")
+
+[node name="MinusKamienie" type="Sprite2D" parent="." unique_id=832252558]
+texture_filter = 1
+position = Vector2(997, 391.00006)
+scale = Vector2(1.7348708, 1.6735706)
+texture = ExtResource("15_vfocj")
+
+[node name="Rozpierdol" type="Sprite2D" parent="." unique_id=1810229484]
+texture_filter = 1
+position = Vector2(1065.0002, 392.00012)
+scale = Vector2(1.9167975, 1.9220797)
+texture = ExtResource("16_hm5nf")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/HSlider3" to="." method="_on_h_slider_3_value_changed"]
