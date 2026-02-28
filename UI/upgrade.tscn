@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://giujk4tubfiu" path="res://UI/item_column.tscn" id="1_aqegd"]
 
 [node name="Upgrade" type="Control" unique_id=592570759]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,10 +24,8 @@ grow_vertical = 2
 [node name="ItemColumn" parent="HBoxContainer" unique_id=303769563 instance=ExtResource("1_aqegd")]
 layout_mode = 2
 
-[node name="ItemColumn2" type="VBoxContainer" parent="HBoxContainer" unique_id=682859117]
+[node name="ItemColumn2" parent="HBoxContainer" unique_id=1632531292 instance=ExtResource("1_aqegd")]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="ItemColumn3" type="VBoxContainer" parent="HBoxContainer" unique_id=1179123894]
+[node name="ItemColumn3" parent="HBoxContainer" unique_id=1090204875 instance=ExtResource("1_aqegd")]
 layout_mode = 2
-size_flags_horizontal = 3
