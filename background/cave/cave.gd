@@ -51,7 +51,7 @@ func draw_rough_circle(center: Vector2i, r: int):
 
 
 func _on_timer_timeout() -> void:
-	var x = randi_range(-1,1)*(randi_range(100,400))
+	var x = randi_range(-1,1)*(randi_range(500,800))
 	var y = (randi_range(700,800))
 	var pos = tile.local_to_map(Vector2(player.position)+Vector2(x,y))
 	draw_rough_circle(pos,13)

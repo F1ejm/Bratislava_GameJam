@@ -31,6 +31,8 @@ var warning : bool = true
 @export var iskry :CPUParticles2D
 @export var iskry1 : CPUParticles2D
 
+
+
 func _ready() -> void:
 	global_position.x = 3500
 	global_position.y -= 300
@@ -38,8 +40,8 @@ func _ready() -> void:
 	anim.play("drill")
 
 
-func _physics_process(delta: float) -> void:
 
+func _physics_process(delta: float) -> void:
 	
 	if IsFalling:
 		$CPUParticles2D.emitting = false
@@ -127,6 +129,8 @@ func itempicked(itemname: String, isactive: bool):
 		$"..".items.erase("SPEEEEEEED!!!")
 
 func _input(event): 
+
+	
 	if event.is_action_pressed("Use_item"): 
 		match AciteveItem:
 			"Brakes":
