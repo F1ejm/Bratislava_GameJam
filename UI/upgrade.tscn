@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bmdeg2lvukdy4"]
+[gd_scene format=3 uid="uid://b4xyqh8b3xpph"]
 
 [ext_resource type="Script" uid="uid://cdst3j3kj1qxu" path="res://UI/upgrade.gd" id="1_04pi6"]
 [ext_resource type="PackedScene" uid="uid://giujk4tubfiu" path="res://UI/item_column.tscn" id="1_aqegd"]
@@ -12,6 +12,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_04pi6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=592784029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3137255)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1389153883]
 layout_mode = 1
