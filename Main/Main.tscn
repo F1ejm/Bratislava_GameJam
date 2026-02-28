@@ -7,6 +7,7 @@
 [node name="Main" type="Node2D" unique_id=2043031081]
 
 [node name="background" parent="." unique_id=2010711369 node_paths=PackedStringArray("player") instance=ExtResource("3_amygn")]
+visible = false
 player = NodePath("../Miner")
 
 [node name="Trail" parent="." unique_id=368303599 node_paths=PackedStringArray("player") instance=ExtResource("1_lxy7q")]

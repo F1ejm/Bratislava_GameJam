@@ -2,7 +2,7 @@ extends TileMap
 
 @export var tile: TileMap
 @export var player : CharacterBody2D
-@export var marker : Marker2D
+
 
 @export var hight:=  60
 @export var width:= 60

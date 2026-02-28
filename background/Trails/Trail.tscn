@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://dlwqgq3s82vfb"]
 
 [ext_resource type="Script" uid="uid://d31ihke7lpypw" path="res://background/Trails/Trail.gd" id="1_fy6wo"]
+[ext_resource type="Texture2D" uid="uid://xq7dhec046le" path="res://grafiki/Sprite-0001.png" id="1_v51hn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cwp5f"]
+texture = ExtResource("1_v51hn")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_w8d6i"]
 custom_data_layer_0/name = "Marek"
 custom_data_layer_0/type = 2
+sources/2 = SubResource("TileSetAtlasSource_cwp5f")
 
 [node name="Trail" type="TileMap" unique_id=368303599 node_paths=PackedStringArray("tile")]
 tile_set = SubResource("TileSet_w8d6i")
