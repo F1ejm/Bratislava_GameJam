@@ -12,7 +12,23 @@ var items := [
 	"SPEEEEEEED!!!"]
 
 func upgradesmenuopen():
+<<<<<<< Updated upstream
 
 	pass
 	#upgrade.show()
 	#get_tree().paused = true
+=======
+	pass
+	#upgrade.show()
+	#get_tree().paused = true
+	upgrade.itemname1 = "Rock Smasher"
+	while(upgrade.itemname1 == upgrade.itemname2 or upgrade.itemname2 == upgrade.itemname3 or upgrade.itemname1 == upgrade.itemname3):
+		upgrade.itemname1 = items[randi() % items.size()]
+		upgrade.itemname2 = items[randi() % items.size()]
+		upgrade.itemname3 = items[randi() % items.size()]
+		print("marek")
+		
+	upgrade.refresh()
+	upgrade.show()
+	get_tree().paused = true
+>>>>>>> Stashed changes
