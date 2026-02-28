@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/rock_hit.mp3-387ed45c8213da010fa17011313c4e98
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

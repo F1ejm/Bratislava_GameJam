@@ -54,8 +54,12 @@ func _physics_process(delta: float) -> void:
 	
 	if IsFalling:
 		$CPUParticles2D.emitting = false
+		if AudioManager.drill.playing == true:
+			AudioManager.drill.stop()
 	else:
 		$CPUParticles2D.emitting = true
+		if AudioManager.drill.playing == false:
+			AudioManager.drill.play()
 	
 	var direction := (get_global_mouse_position() - self.global_position).normalized() * 100
 	if direction.y < 0:
@@ -143,11 +147,14 @@ func _input(event):
 		match AciteveItem:
 			"Brakes":
 				breakingforce = 80
+				AudioManager.car_brake.play()
 			"Rock Smasher":
+				AudioManager.rock_break.play()
 				rocksmashing = true
 				await get_tree().create_timer(10).timeout
 				rocksmashing = false
 			"SPEEEEEEED!!!":
+				AudioManager.speed_up.play()
 				pass
 		print(AciteveItem)
 
@@ -179,6 +186,7 @@ func body_entered(body: Node2D) -> void:
 	if body.is_in_group("Kamien"):
 		if !rocksmashing:
 			iskra()
+			AudioManager.rock_hit.play()
 			main.add_trauma(2)
 		else:
 			body._particle()
