@@ -63,7 +63,7 @@ func refresh():
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = true
 			"Rock Smasher":
-				currentcollumn.itemimage = null
+				currentcollumn.itemimage = preload("res://grafiki/boosts/rock_break.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive =true
