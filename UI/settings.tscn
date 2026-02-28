@@ -46,7 +46,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1_7iqql")
-text = "Musici Volume:"
+text = "Music Volume:"
 
 [node name="HSlider2" type="HSlider" parent="VBoxContainer" unique_id=1297482991]
 texture_filter = 1
