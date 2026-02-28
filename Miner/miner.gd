@@ -25,6 +25,8 @@ var currentLevel: int = 1
 
 var IsFalling: bool = false
 
+var warning : bool = true
+
 @export var anim : AnimationPlayer
 
 @onready var player_camera: Camera2D = $"../PlayerCamera"
@@ -131,3 +133,4 @@ func spawnTail(number: int):
 		$TailSP.add_child(tail)
 	else:
 		$TailSP.get_child(0).spawnTail(number+1)
+		
