@@ -55,12 +55,13 @@ _data = {
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6ed8r"]
 gradient = SubResource("Gradient_jklhs")
 
-[node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim", "iskry", "iskry1") groups=["Player"]]
+[node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim", "iskry", "iskry1", "drilling_part") groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_qjko8")
 anim = NodePath("AnimationPlayer")
 iskry = NodePath("iskry")
 iskry1 = NodePath("iskry2")
+drilling_part = NodePath("CPUParticles2D")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1998998221]
 position = Vector2(0, 14.81)

@@ -5,11 +5,19 @@ extends Node2D
 @export var max_roll : float = 0.1
 @export var follow_node : Node2D
 
+@export var player: CharacterBody2D
+
 var trauma = 0.0
 var trauma_power = 2
+var p = true
+
 
 func _process(delta: float) -> void:
 	#add_trauma(4)
+	if p == true:
+		player.drilling_part.emitting = false
+	elif p != true:
+		player.drilling_part.emitting = true
 	
 	if follow_node:
 		global_position = follow_node.global_position
@@ -62,4 +70,10 @@ func upgradesmenuopen():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print("f")
+		p = true
+		
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		p = false

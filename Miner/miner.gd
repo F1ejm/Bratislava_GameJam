@@ -38,9 +38,11 @@ var rocksmashing: bool = false
 @export var iskry1 : CPUParticles2D
 @export var main : Node2D
 @export var area :Area2D
+@export var drilling_part: CPUParticles2D
 
 
 func _ready() -> void:
+	drilling_part.emitting = false
 	global_position.x = 3500
 	global_position.y -= 500
 	anim.play("drill")
@@ -53,10 +55,12 @@ func _physics_process(delta: float) -> void:
 
 	
 	if IsFalling:
+		main.p = true
 		$CPUParticles2D.emitting = false
 		if AudioManager.drill.playing == true:
 			AudioManager.drill.stop()
 	else:
+		main.p = false
 		$CPUParticles2D.emitting = true
 		if AudioManager.drill.playing == false:
 			AudioManager.drill.play()
