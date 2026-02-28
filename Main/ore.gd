@@ -1,6 +1,7 @@
 extends Node2D
 
 var oretype: int
+var worth: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,14 +10,19 @@ func refresh():
 	var rand = randi_range(0,99)
 	if(rand < 2):
 		oretype = 5
+		worth = 5000
 	elif(rand < 8):
 		oretype = 4
+		worth = 500
 	elif(rand < 25):
 		oretype = 3
+		worth = 100
 	elif(rand < 50):
 		oretype = 2
+		worth = 50
 	else:
 		oretype = 1
+		worth = 20
 		
 	var original_tex = $PointLight2D.texture
 	var new_tex = original_tex.duplicate()
@@ -49,3 +55,8 @@ func refresh():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if(body.is_in_group("Player")):
+		Global.score += worth
+		queue_free()

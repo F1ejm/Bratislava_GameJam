@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://casujgyl3bxey" path="res://Main/ore.gd" id="1_llwgu"]
 [ext_resource type="Texture2D" uid="uid://uhbstf0hjg3w" path="res://grafiki/ore3.png" id="2_cbdgn"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbdgn"]
+radius = 11.95
+
 [sub_resource type="Gradient" id="Gradient_cbdgn"]
 offsets = PackedFloat32Array(0, 0.7331731)
 colors = PackedColorArray(0.94509804, 0.9019608, 0.02745098, 1, 0, 0, 0, 1)
@@ -16,6 +19,12 @@ fill_from = Vector2(0.5, 0.5)
 scale = Vector2(4, 4)
 script = ExtResource("1_llwgu")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=301321883]
+position = Vector2(-0.27, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1618629785]
+shape = SubResource("CircleShape2D_cbdgn")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=711159228]
 z_index = 25
 texture_filter = 1
@@ -24,3 +33,5 @@ texture = ExtResource("2_cbdgn")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=197148170]
 range_z_max = 20
 texture = SubResource("GradientTexture2D_3oapc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

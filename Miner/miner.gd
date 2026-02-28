@@ -100,7 +100,7 @@ func _physics_process(delta: float) -> void:
 	
 	if (Global.score > nextUpgrade):
 		upgradesmenuopen()
-		currentLevel += 2
+		currentLevel += 5
 		nextUpgrade += currentLevel * 200
 	
 	move_and_slide()
@@ -113,13 +113,13 @@ func itempicked(itemname: String, isactive: bool):
 	if(!isactive):
 		match itemname:
 			"Faster Sterring":
-				upgturn += 1
+				upgturn += 2
 			"Better Luck":
-				upgore += 1
+				upgore += 2
 			"Less Rock":
-				upgstone += 1
+				upgstone += 2
 			"Money!":
-				upgreawards += 1
+				upgreawards += 2
 				
 	else:
 		AciteveItem = itemname
