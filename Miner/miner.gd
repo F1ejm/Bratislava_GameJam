@@ -46,6 +46,8 @@ func _physics_process(delta: float) -> void:
 	if(Global.history.size() > maxhistory):
 		Global.history.pop_back()
 	
+	Global.currentSPEED = currentSPEED
+	
 	move_and_slide()
 	
 func spawnTail(number: int):
