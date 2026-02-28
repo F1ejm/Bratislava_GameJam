@@ -6,14 +6,14 @@ extends Node2D
 func _ready() -> void:
 	match randi_range(0,2):
 		0:
-			$StaticBody2D/CollisionShape2D2.queue_free()
-			$StaticBody2D/CollisionShape2D3.queue_free()
+			$CollisionShape2D2.queue_free()
+			$CollisionShape2D3.queue_free()
 		1:
-			$StaticBody2D/CollisionShape2D.queue_free()
-			$StaticBody2D/CollisionShape2D3.queue_free()
+			$CollisionShape2D.queue_free()
+			$CollisionShape2D3.queue_free()
 		2:
-			$StaticBody2D/CollisionShape2D.queue_free()
-			$StaticBody2D/CollisionShape2D2.queue_free()
+			$CollisionShape2D.queue_free()
+			$CollisionShape2D2.queue_free()
 	var sca = randf_range(2,15)
 	scale = Vector2(sca,sca)
 	rotation = randf_range(0,2*PI)

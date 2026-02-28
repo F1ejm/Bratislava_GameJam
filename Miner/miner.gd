@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var minSPEED = 150.0
-var maxSPEED = 700.0
+var maxSPEED = 600.0
 var currentSPEED = 200.0
 const maxhistory = 500
 var scoref: float = 0.0
@@ -188,9 +188,9 @@ func _on_timer_timeout() -> void:
 
 func body_entered(body: Node2D) -> void:
 	if body.is_in_group("Kamien"):
-		if Global.hp == 1:
-			print("maro")
 		if !rocksmashing:
+			if Global.hp == 1:
+				print("maro")
 			iskra()
 			AudioManager.rock_hit.play()
 			main.add_trauma(2)

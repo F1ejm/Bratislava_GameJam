@@ -9,41 +9,39 @@
 radius = 13.46
 height = 27.56
 
-[node name="Stone" type="Node2D" unique_id=1802670844 node_paths=PackedStringArray("particle") groups=["Kamien"]]
+[node name="stone" type="StaticBody2D" unique_id=1329999401 node_paths=PackedStringArray("particle") groups=["Kamien"]]
 script = ExtResource("1_g5l2f")
-particle = NodePath("StaticBody2D/CPUParticles2D")
+particle = NodePath("CPUParticles2D")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1539757182 groups=["Kamien"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=515438229]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=599437085]
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_1l3w4")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=937376122]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1351693406]
 texture_filter = 1
 position = Vector2(2, 2)
 scale = Vector2(1.11, 1.11)
 texture = ExtResource("1_yveq7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1031291733]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=520032734]
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_1l3w4")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2" unique_id=377984047]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2" unique_id=722279370]
 texture_filter = 1
 position = Vector2(-1.075, -0.41)
 texture = ExtResource("2_g5l2f")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=606666662]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=266887513]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_1l3w4")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D3" unique_id=1820805480]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D3" unique_id=1354252853]
 texture_filter = 1
 position = Vector2(-0.24, 2)
 texture = ExtResource("3_w23k6")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="StaticBody2D" unique_id=130742245]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=557193325]
 emitting = false
 amount = 32
 lifetime = 0.24
