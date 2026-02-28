@@ -39,48 +39,48 @@ func _process(delta: float) -> void:
 	
 
 
-func timeout() -> void:
-	
-	var x = randi_range(-1,1)*(randi_range(100,300))
-	var y = (randi_range(300,800))
-	var pos = tile.local_to_map(Vector2(player.position)+Vector2(x,y))
-	draw_rough_circle(pos,9)
-	pos += Vector2i(10,6)
-	draw_rough_circle(pos,7)
-	#print(player.position)
-	#print(pos)
+#func timeout() -> void:
 	#
-	#var r = randi_range(20,40)
-	#var t = randi_range(20,30)
-	#
-	#for u in range(3,r):
-		#for h in range(3,t):
-			#tile.set_cell(0,pos+Vector2i(u,h),3,Vector2i(2,1),0)
-			#
-	#var left = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_LEFT_SIDE)
-	#var down = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_BOTTOM_SIDE)
-	#var top = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_TOP_SIDE)
-	#
-	#for b in range(4,randi_range(10,20)):
-		#tile.set_cell(0,left+Vector2i(3,b),3,Vector2i(2,1),0)
-		#tile.set_cell(0,left+Vector2i(2,b-1),3,Vector2i(2,1),0)
-		#tile.set_cell(0,left+Vector2i(1,b-2),3,Vector2i(2,1),0)
+	#var x = randi_range(-1,1)*(randi_range(100,300))
+	#var y = (randi_range(300,800))
+	#var pos = tile.local_to_map(Vector2(player.position)+Vector2(x,y))
+	#draw_rough_circle(pos,9)
+	#pos += Vector2i(10,6)
+	#draw_rough_circle(pos,7)
+	##print(player.position)
+	##print(pos)
+	##
+	##var r = randi_range(20,40)
+	##var t = randi_range(20,30)
+	##
+	##for u in range(3,r):
+		##for h in range(3,t):
+			##tile.set_cell(0,pos+Vector2i(u,h),3,Vector2i(2,1),0)
+			##
+	##var left = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_LEFT_SIDE)
+	##var down = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_BOTTOM_SIDE)
+	##var top = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_TOP_SIDE)
+	##
+	##for b in range(4,randi_range(10,20)):
+		##tile.set_cell(0,left+Vector2i(3,b),3,Vector2i(2,1),0)
+		##tile.set_cell(0,left+Vector2i(2,b-1),3,Vector2i(2,1),0)
+		##tile.set_cell(0,left+Vector2i(1,b-2),3,Vector2i(2,1),0)
+		##
+		##tile.set_cell(0,top+Vector2i(b,3),3,Vector2i(2,1),0)
+		##tile.set_cell(0,top+Vector2i(b-1,2),3,Vector2i(2,1),0)
+		##tile.set_cell(0,top+Vector2i(b-2,1),3,Vector2i(2,1),0)
 		#
-		#tile.set_cell(0,top+Vector2i(b,3),3,Vector2i(2,1),0)
-		#tile.set_cell(0,top+Vector2i(b-1,2),3,Vector2i(2,1),0)
-		#tile.set_cell(0,top+Vector2i(b-2,1),3,Vector2i(2,1),0)
-		
-		
-
-func draw_rough_circle(center: Vector2i, r: int):
-	for x in range(-r - 5, r + 5):
-		for y in range(-r - 5, r + 5):
-			
-			var dist = Vector2(x, y).length()
-			
-			# dodajemy losowe "poszarpanie"
-			var rough_offset = randf_range(-noise_strength, noise_strength)
-			
-			if dist <= r + rough_offset:
-				tile.set_cell(0, center + Vector2i(x, y), 3, Vector2(2,1))
-	
+		#
+#
+#func draw_rough_circle(center: Vector2i, r: int):
+	#for x in range(-r - 5, r + 5):
+		#for y in range(-r - 5, r + 5):
+			#
+			#var dist = Vector2(x, y).length()
+			#
+			## dodajemy losowe "poszarpanie"
+			#var rough_offset = randf_range(-noise_strength, noise_strength)
+			#
+			#if dist <= r + rough_offset:
+				#tile.set_cell(0, center + Vector2i(x, y), 3, Vector2(2,1))
+	#

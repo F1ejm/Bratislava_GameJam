@@ -30,9 +30,9 @@ func _process(delta: float) -> void:
 		print(data.get_custom_data("marek"))
 		if data.get_custom_data("marek")== 1:
 			player.IsFalling = true
-			
-	else:
+	else: 
 		player.IsFalling = false
+		
 		
 	
 
@@ -52,9 +52,11 @@ func draw_rough_circle(center: Vector2i, r: int):
 
 func _on_timer_timeout() -> void:
 	var x = randi_range(-1,1)*(randi_range(100,400))
-	var y = (randi_range(400,500))
+	var y = (randi_range(700,800))
 	var pos = tile.local_to_map(Vector2(player.position)+Vector2(x,y))
 	draw_rough_circle(pos,13)
+	draw_rough_circle(pos+Vector2i(5,10),13)
+	draw_rough_circle(pos-Vector2i(3,15),13)
 	
 	#pos += Vector2i(10,6)
 	#draw_rough_circle(pos,7)
