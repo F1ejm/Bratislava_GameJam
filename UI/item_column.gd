@@ -4,6 +4,9 @@ var itemname: String
 var itemdesc: String
 var isActive: bool
 
+@export var ui: Control
+@export var player: CharacterBody2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -13,6 +16,6 @@ func refresh():
 	$RichTextLabel2.text = itemdesc
 
 func _on_texture_button_button_down() -> void:
-	$"../..".hide()
-	$"../../../../Miner".itempicked(itemname, isActive)
+	ui.hide()
+	player.itempicked(itemname, isActive)
 	get_tree().paused = false

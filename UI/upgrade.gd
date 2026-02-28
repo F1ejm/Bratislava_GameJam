@@ -4,9 +4,9 @@ var itemname1: String
 var itemname2: String
 var itemname3: String
 
-@onready var item_column: VBoxContainer = $HBoxContainer/ItemColumn
-@onready var item_column_2: VBoxContainer = $HBoxContainer/ItemColumn2
-@onready var item_column_3: VBoxContainer = $HBoxContainer/ItemColumn3
+@export var item_column: VBoxContainer 
+@export var item_column_2: VBoxContainer 
+@export var item_column_3: VBoxContainer 
 
 var currentcollumn: VBoxContainer
 var currentitem: String
@@ -30,47 +30,47 @@ func refresh():
 			"Faster Sterring":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/plus_skret.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "Makes your drill more maneuverable"
 				currentcollumn.isActive = false
 			"Slow Down!!!":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/minus_speed.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "Slows drill down"
 				currentcollumn.isActive = false
 			"Money!":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/plus_score.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "Increases your score"
 				currentcollumn.isActive = false
 			"Better Luck":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/plus_rudy.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "Increase chances of spawning ores "
 				currentcollumn.isActive = false
 			"Less Rock":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/minus_kamienie.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "Removes some of the rocks before you can notice them"
 				currentcollumn.isActive = false
 			"Brakes":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/hamulec.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "When you preess 'spacebar' it makes drill move slower"
 				currentcollumn.isActive = true
 			"Invicibility":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/invincibility.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "Makes you invincible for some time 'spacebar'"
 				currentcollumn.isActive = true
 			"Rock Smasher":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/rock_break.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "For sometime you are able to destroy rocks 'spacebar'"
 				currentcollumn.isActive =true
 			"SPEEEEEEED!!!":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/rozpierdol.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "null"
+				currentcollumn.itemdesc = "Gives you extra speed 'spacebar'"
 				currentcollumn.isActive =true
 	item_column.refresh()
 	item_column_2.refresh()

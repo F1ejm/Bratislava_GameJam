@@ -19,26 +19,33 @@ expand_mode = 4
 stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=141902867]
+texture_filter = 1
+texture_repeat = 1
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_a8mmi")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 13
 text = "Brakes
 "
 fit_content = true
 tab_size = 12
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1640167084]
+texture_filter = 1
+texture_repeat = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("3_a8mmi")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/normal_font_size = 11
 text = "Jakiś opisaaaaaaaaa
 "
 fit_content = true
+vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=823015952]
 texture_filter = 1
+custom_minimum_size = Vector2(30, 40)
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_b2t2q")
