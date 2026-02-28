@@ -58,5 +58,12 @@ func timeout() -> void:
 	for u in range(3,r):
 		for h in range(3,t):
 			tile.set_cell(0,pos+Vector2i(u,h),3,Vector2i(2,1),0)
+			
+	var left = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_LEFT_SIDE)
+	var down = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_BOTTOM_SIDE)
+	var top = tile.get_neighbor_cell(pos,TileSet.CELL_NEIGHBOR_TOP_SIDE)
 	
+	for b in range(3,randi_range(6,15)):
+		
+		
 	
