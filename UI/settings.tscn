@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://og3lp25ts23w"]
+
+[ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="1_7iqql"]
+[ext_resource type="Theme" uid="uid://gpf6etjyd5li" path="res://grafiki/ui/ui_theme.tres" id="2_vbc7n"]
+
+[node name="Settings" type="Control" unique_id=2145115873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1565042403]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 45.0
+offset_top = -102.0
+offset_right = 394.0
+offset_bottom = 102.0
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1786263688]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("1_7iqql")
+text = "Master Volume:"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1073432222]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_vbc7n")
+value = 53.0
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=530106621]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("1_7iqql")
+text = "Musici Volume:"
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer" unique_id=1297482991]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_vbc7n")
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1280943560]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("1_7iqql")
+text = "SFX Volume:"
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer" unique_id=65756741]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_vbc7n")
