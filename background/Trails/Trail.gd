@@ -12,13 +12,20 @@ func _process(delta: float) -> void:
 	for h in hight:
 		for w in width:
 			tile.set_cell(0,Vector2i(w,player.position.y+h+50),2,Vector2(0,0),0)
-	var clicked_cell = tile.local_to_map(tile.get_local_mouse_position())
+	
+	
+	
+	var clicked_cell = tile.local_to_map(player.position)
+	#print(clicked_cell)
+	tile.erase_cell(0,clicked_cell)
 	var data = tile.get_cell_tile_data(0, clicked_cell)
-	if data:
-		#print(data.get_custom_data("Marek"))
-		pass
-	else:
-		pass
+	
+	
+	#if data:
+		##print(data.get_custom_data("Marek"))
+		#pass
+	#else:
+		#pass
 #erase_cell()
 
 func _ready() -> void:
