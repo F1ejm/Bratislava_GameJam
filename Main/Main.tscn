@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://yxfr0kw4eqgt" path="res://Main/StoneSpawner.tscn" id="4_ps1la"]
 [ext_resource type="PackedScene" uid="uid://b4xyqh8b3xpph" path="res://UI/upgrade.tscn" id="5_6aewd"]
 [ext_resource type="Texture2D" uid="uid://br3kmjpfnkdtj" path="res://grafiki/grass.png" id="5_lrfe7"]
-[ext_resource type="Script" path="res://Main/ore_spawner.gd" id="7_qd626"]
+[ext_resource type="Script" uid="uid://c0jc5h62o651y" path="res://Main/ore_spawner.gd" id="7_qd626"]
 [ext_resource type="Texture2D" uid="uid://devg5dioucfib" path="res://grafiki/budynek.png" id="8_h5g1y"]
 [ext_resource type="Texture2D" uid="uid://btt8gfwa2nhbs" path="res://grafiki/dzwig.png" id="9_qd626"]
 [ext_resource type="Texture2D" uid="uid://45d8ie3hfcq6" path="res://grafiki/komin2.png" id="10_6ivxk"]

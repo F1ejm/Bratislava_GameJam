@@ -6,6 +6,8 @@ var currentSPEED = 200.0
 const maxhistory = 500
 var scoref: float = 0.0
 
+var startlock: bool = false
+
 var upgturn: int = 0
 var upgreawards: int = 0
 var upgstone: int = 0
@@ -42,6 +44,9 @@ func _ready() -> void:
 	global_position.x = 3500
 	global_position.y -= 500
 	anim.play("drill")
+	startlock = true
+	await get_tree().create_timer(2).timeout
+	startlock = false
 
 
 func _physics_process(delta: float) -> void:
@@ -70,11 +75,11 @@ func _physics_process(delta: float) -> void:
 		currentSPEED = minSPEED
 	elif(currentSPEED > maxSPEED):
 		currentSPEED = maxSPEED
-	
-	torotation = atan2(direction.y, direction.x) - PI/2
+	if(!startlock):
+		torotation = atan2(direction.y, direction.x) - PI/2
 	
 	$Node2D.rotation = rotate_toward($Node2D.rotation,-torotation,delta * (3 + upgturn))
-	$Node2D/PointLight2D.global_rotation += delta *3
+	
 	
 	if IsFalling:
 		torotation = lerp(self.rotation, 0.0, delta * 2)
@@ -176,4 +181,5 @@ func body_entered(body: Node2D) -> void:
 			iskra()
 			main.add_trauma(2)
 		else:
+			body._particle()
 			body.queue_free()
