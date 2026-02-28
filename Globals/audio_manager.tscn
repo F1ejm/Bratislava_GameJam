@@ -1,6 +1,44 @@
 [gd_scene format=3 uid="uid://dpobvv7xllm2g"]
 
 [ext_resource type="Script" uid="uid://4uvstwubr4p5" path="res://Globals/audio_manager.gd" id="1_kho5r"]
+[ext_resource type="AudioStream" uid="uid://ca50041dsuqay" path="res://Audio/car_brake.mp3" id="2_qhhwe"]
+[ext_resource type="AudioStream" uid="uid://fdvggswpsgcc" path="res://Audio/drill.mp3" id="3_jatf3"]
+[ext_resource type="AudioStream" uid="uid://ldpbhrfvehwb" path="res://Audio/music.mp3" id="4_lxs7p"]
+[ext_resource type="AudioStream" uid="uid://dgduum1rv0y1s" path="res://Audio/rock_break.mp3" id="5_oi1wl"]
+[ext_resource type="AudioStream" uid="uid://b7rfaf04gccgr" path="res://Audio/rock_hit.mp3" id="6_fb0sx"]
+[ext_resource type="AudioStream" uid="uid://cvmuk0qkc1788" path="res://Audio/speed_up.mp3" id="7_r6l1c"]
 
 [node name="AudioManager" type="Node" unique_id=1287916313]
 script = ExtResource("1_kho5r")
+
+[node name="CarBrake" type="AudioStreamPlayer" parent="." unique_id=983270617]
+stream = ExtResource("2_qhhwe")
+bus = &"SFX"
+
+[node name="Drill" type="AudioStreamPlayer" parent="." unique_id=881290611]
+stream = ExtResource("3_jatf3")
+volume_db = -22.0
+pitch_scale = 1.55
+bus = &"SFX"
+parameters/looping = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1075544218]
+stream = ExtResource("4_lxs7p")
+volume_db = -28.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="RockBreak" type="AudioStreamPlayer" parent="." unique_id=1265878986]
+stream = ExtResource("5_oi1wl")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="RockHit" type="AudioStreamPlayer" parent="." unique_id=308812352]
+stream = ExtResource("6_fb0sx")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="SpeedUp" type="AudioStreamPlayer" parent="." unique_id=1721853982]
+stream = ExtResource("7_r6l1c")
+bus = &"SFX"
