@@ -12,6 +12,7 @@ var width:= 90
 var cave :=1
 
 func _process(delta: float) -> void:
+	
 	#for h in hight:
 		#for w in width:
 			#tile.set_cell(0,Vector2i(w,player.position.y+h+50),3,Vector2(randi_range(0,7),randi_range(2,7)),0)
@@ -45,11 +46,17 @@ func _ready() -> void:
 
 
 func timeout() -> void:
-	var x = randi_range(70,70)
-	var y = randi_range(-1,1)*(randi_range(70,130))
-	var pos = Vector2i(player.position)+Vector2i(x,y)
+	var x = randi_range(-1,1)*(randi_range(100,300))
+	var y = (randi_range(300,800))
+	var pos = tile.local_to_map(Vector2(player.position)+Vector2(x,y))
+	print(player.position)
 	print(pos)
-	tile.set_cell(0,pos,3,Vector2(2,1),0)
 	
+	var r = randi_range(10,20)
+	var t = randi_range(10,20)
+	
+	for u in range(3,r):
+		for h in range(3,t):
+			tile.set_cell(0,pos+Vector2i(u,h),3,Vector2i(2,1),0)
 	
 	

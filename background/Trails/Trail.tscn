@@ -121,7 +121,7 @@ script = ExtResource("1_fy6wo")
 tile = NodePath(".")
 
 [node name="Timer" type="Timer" parent="." unique_id=103336229]
-wait_time = 1.5
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="timeout"]
