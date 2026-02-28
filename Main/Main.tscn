@@ -50,6 +50,7 @@ zoom = Vector2(0.7, 0.7)
 visible = false
 
 [node name="Budynek" type="Sprite2D" parent="." unique_id=841508329]
+self_modulate = Color(0.98, 0.735, 0.735, 1)
 texture_filter = 1
 position = Vector2(-175, -296.00003)
 scale = Vector2(6.805555, 6.805555)
@@ -81,6 +82,7 @@ scale = Vector2(5.4375, 5.4375)
 texture = ExtResource("12_lrfe7")
 
 [node name="2Domek" type="Sprite2D" parent="." unique_id=1444202637]
+self_modulate = Color(1, 1, 1, 0.78431374)
 texture_filter = 1
 position = Vector2(350, -283)
 scale = Vector2(5.9888887, 5.9888887)
