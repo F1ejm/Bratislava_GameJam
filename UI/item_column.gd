@@ -13,6 +13,6 @@ func refresh():
 	$RichTextLabel2.text = itemdesc
 
 func _on_texture_button_button_down() -> void:
-	$"../../../..".items.erase(itemname)
 	$"../..".hide()
+	$"../../../../Miner".itempicked(itemname, isActive)
 	get_tree().paused = false

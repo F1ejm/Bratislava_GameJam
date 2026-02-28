@@ -32,12 +32,10 @@ func shake():
 @onready var upgrade: Control = $CanvasLayer/Upgrade
 var items := [
 	"Faster Sterring",
-	"Slow Down!!!",
 	"Better Luck",
-	"The Rock",
-	"Brakes",
+	"Less Rock",
 	"Money!",
-	"Invicibility",
+	"Brakes",
 	"Rock Smasher",
 	"SPEEEEEEED!!!"]
 	
