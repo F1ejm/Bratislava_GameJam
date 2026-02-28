@@ -15,5 +15,4 @@ func _ready() -> void:
 	player.position.x = 500
 	for h in 100:
 		for w in width:
-			
 			tile.set_cell(0,Vector2i(w,h),0,Vector2(randi_range(0,7),randi_range(2,7)),0)
