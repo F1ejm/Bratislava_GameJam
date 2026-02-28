@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cocsmookrc5ij" path="res://grafiki/pixil-frame-0_2.png" id="2_d2glt"]
 [ext_resource type="Texture2D" uid="uid://6shuns8sthti" path="res://grafiki/pixil-frame-0_3.png" id="3_yrdpm"]
 [ext_resource type="Texture2D" uid="uid://c4cslq2cuofd6" path="res://grafiki/pixil-frame-0_4.png" id="4_jklhs"]
+[ext_resource type="PackedScene" uid="uid://bmdeg2lvukdy4" path="res://UI/upgrade.tscn" id="5_jklhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2degd"]
 
@@ -90,3 +91,5 @@ scale = Vector2(5, 3)
 texture = SubResource("GradientTexture2D_jklhs")
 texture_scale = 1.19
 height = 830.0
+
+[node name="Upgrade" parent="." unique_id=592570759 instance=ExtResource("5_jklhs")]

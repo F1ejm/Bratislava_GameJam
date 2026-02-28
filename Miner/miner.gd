@@ -46,13 +46,15 @@ func _physics_process(delta: float) -> void:
 		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50 * (1 + upgspeed/10))
 	
 	
-	
 	if (currentSPEED < minSPEED):
 		currentSPEED = minSPEED
 	elif(currentSPEED > maxSPEED):
 		currentSPEED = maxSPEED
 	
 	torotation = atan2(direction.y, direction.x) - PI/2
+	
+	$Node2D.rotation = rotate_toward($Node2D.rotation,-torotation,delta * (3 + upgturn))
+	$Node2D/PointLight2D.global_rotation += delta *3
 	
 	if IsFalling:
 		torotation = lerp(self.rotation, 0.0, delta)
@@ -88,10 +90,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func upgradesmenuopen():
-	var scene := preload("res://UI/upgrade.tscn")
-	var upgrades := scene.instantiate()
-	get_tree().root.add_child(upgrades)
-	get_tree().paused = true	
+	#get_tree().paused = true	
+	pass
 
 func itempicked(itemname: String, isactive: bool):
 	if(isactive):
