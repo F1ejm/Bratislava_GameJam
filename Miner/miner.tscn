@@ -61,10 +61,12 @@ metadata/_snap_count = 16
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6ed8r"]
 gradient = SubResource("Gradient_jklhs")
 
-[node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim")]
+[node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim", "iskry", "iskry1")]
 motion_mode = 1
 script = ExtResource("1_qjko8")
 anim = NodePath("AnimationPlayer")
+iskry = NodePath("iskry")
+iskry1 = NodePath("iskry2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1998998221]
 position = Vector2(0, 14.81)
@@ -102,6 +104,7 @@ texture = SubResource("GradientTexture2D_6ed8r")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1756662190]
 position = Vector2(0, 43)
+emitting = false
 amount = 13
 lifetime = 0.21000000000000002
 explosiveness = 0.13
@@ -119,5 +122,31 @@ color = Color(0.5436707, 0.30170706, 0.17548245, 1)
 [node name="Timer" type="Timer" parent="." unique_id=1691136412]
 wait_time = 0.5
 autostart = true
+
+[node name="iskry" type="CPUParticles2D" parent="." unique_id=232818692]
+position = Vector2(0, 46)
+emitting = false
+spread = 69.75
+initial_velocity_min = 312.5
+initial_velocity_max = 418.75
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+color = Color(11.887995, 7.3233166, 0, 1)
+
+[node name="iskry2" type="CPUParticles2D" parent="." unique_id=1359547263]
+position = Vector2(0, 46)
+emitting = false
+amount = 17
+lifetime = 0.27
+direction = Vector2(1, -5)
+spread = 40.5
+gravity = Vector2(0, 952.345)
+initial_velocity_min = 168.75
+initial_velocity_max = 350.0
+damping_min = 18.125
+damping_max = 18.75
+scale_amount_min = 2.3
+scale_amount_max = 2.3
+color = Color(0.98803645, 0.33361515, 0.35419908, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
