@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://og3lp25ts23w"]
 
 [ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="1_7iqql"]
+[ext_resource type="Script" uid="uid://jqogdknatcnw" path="res://UI/settings.gd" id="1_wgjsl"]
 [ext_resource type="Theme" uid="uid://gpf6etjyd5li" path="res://grafiki/ui/ui_theme.tres" id="2_vbc7n"]
 
 [node name="Settings" type="Control" unique_id=2145115873]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wgjsl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1565042403]
 layout_mode = 1
@@ -66,3 +68,7 @@ text = "SFX Volume:"
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_vbc7n")
+
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HSlider3" to="." method="_on_h_slider_3_value_changed"]
