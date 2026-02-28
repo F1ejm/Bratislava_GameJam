@@ -20,6 +20,7 @@ var SecAciteveItem: String
 var ThiAciteveItem: String
 var ActiveFull: bool = false
 
+var IsFalling: bool = false
 
 @export var anim : AnimationPlayer
 
@@ -39,8 +40,11 @@ func _physics_process(delta: float) -> void:
 		
 	direction.y += 35
 	#print(direction)
+	if(IsFalling):
+		currentSPEED += delta * 50
+	else:
+		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50 * (1 + upgspeed/10))
 	
-	currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50 * (1 + upgspeed/10))
 	
 	
 	if (currentSPEED < minSPEED):
@@ -49,6 +53,9 @@ func _physics_process(delta: float) -> void:
 		currentSPEED = maxSPEED
 	
 	torotation = atan2(direction.y, direction.x) - PI/2
+	
+	if IsFalling:
+		torotation = lerp(self.rotation, 0.0, delta)
 	
 	self.rotation= rotate_toward(self.rotation,torotation,delta * (3 + upgturn))
 	
@@ -76,13 +83,14 @@ func _physics_process(delta: float) -> void:
 	
 	if (Global.score % 20 > 5 and Global.score > 20):
 		upgradesmenuopen()
+		#IsFalling = true
 	
 	move_and_slide()
 
 func upgradesmenuopen():
 	var scene := preload("res://UI/upgrade.tscn")
 	var upgrades := scene.instantiate()
-	get_owner().add_child(upgrades) 
+	get_tree().root.add_child(upgrades)
 	get_tree().paused = true	
 
 func itempicked(itemname: String, isactive: bool):
