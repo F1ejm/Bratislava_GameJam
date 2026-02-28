@@ -18,7 +18,9 @@ texture = ExtResource("1_cwp5f")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
+2:1/0/custom_data_0 = 99
 3:1/0 = 0
+3:1/0/custom_data_0 = 99
 4:1/0 = 0
 5:1/0 = 0
 6:1/0 = 0
@@ -117,3 +119,9 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 327683, 1, 0, 327683, 1, 1, 327683, 1, -65535, 327683, 1)
 script = ExtResource("1_fy6wo")
 tile = NodePath(".")
+
+[node name="Timer" type="Timer" parent="." unique_id=103336229]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="timeout"]

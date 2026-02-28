@@ -10,6 +10,8 @@
 player = NodePath("../Miner")
 
 [node name="Trail" parent="." unique_id=368303599 node_paths=PackedStringArray("player") instance=ExtResource("1_lxy7q")]
+texture_filter = 1
+texture_repeat = 1
 player = NodePath("../Miner")
 
 [node name="Miner" parent="." unique_id=543357979 instance=ExtResource("2_83ytx")]
