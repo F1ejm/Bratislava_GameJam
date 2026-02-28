@@ -6,6 +6,6 @@ var sfx_volume: int = 30
 
 
 var history = []
-var currentSPEED = 200.0
+var currentSPEED = 300.0
 var score: int = 0
 var scoremulti: int = 0

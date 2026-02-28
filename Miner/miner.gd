@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var minSPEED = 150.0
 var maxSPEED = 700.0
-var currentSPEED = 200.0
+var currentSPEED = 300.0
 const maxhistory = 500
 var scoref: float = 0.0
 

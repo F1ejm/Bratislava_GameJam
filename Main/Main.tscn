@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c27wef3lmgtss" path="res://grafiki/2 domek.png" id="13_r2ac1"]
 
 [node name="Main" type="Node2D" unique_id=2043031081]
+position = Vector2(0, -11)
 script = ExtResource("1_u2i7p")
 
 [node name="background" parent="." unique_id=2010711369 node_paths=PackedStringArray("player") instance=ExtResource("3_amygn")]
@@ -52,39 +53,39 @@ visible = false
 [node name="Budynek" type="Sprite2D" parent="." unique_id=841508329]
 self_modulate = Color(0.98, 0.735, 0.735, 1)
 texture_filter = 1
-position = Vector2(-175, -296.00003)
+position = Vector2(2697.7778, -300.25003)
 scale = Vector2(6.805555, 6.805555)
 texture = ExtResource("8_h5g1y")
 
 [node name="Dzwig" type="Sprite2D" parent="." unique_id=94333824]
 texture_filter = 1
-position = Vector2(-287, -395)
+position = Vector2(2585.778, -399.25)
 scale = Vector2(5.1749997, 5.1749997)
 texture = ExtResource("9_qd626")
 
 [node name="Komin2" type="Sprite2D" parent="." unique_id=1804534970]
 texture_filter = 1
-position = Vector2(858.9999, -359)
+position = Vector2(3731.7778, -363.25)
 scale = Vector2(6.5625, 6.5625)
 texture = ExtResource("10_6ivxk")
 
 [node name="PixilFrame08" type="Sprite2D" parent="." unique_id=1800816549]
 texture_filter = 1
-position = Vector2(196, -350)
+position = Vector2(3068.778, -354.25)
 scale = Vector2(8.125, 8.125)
 texture = ExtResource("11_6yo1i")
 
 [node name="Rampa" type="Sprite2D" parent="." unique_id=98880928]
 z_index = -1
 texture_filter = 1
-position = Vector2(555, -384.00003)
+position = Vector2(3427.7778, -388.25003)
 scale = Vector2(5.4375, 5.4375)
 texture = ExtResource("12_lrfe7")
 
 [node name="2Domek" type="Sprite2D" parent="." unique_id=1444202637]
 self_modulate = Color(1, 1, 1, 0.78431374)
 texture_filter = 1
-position = Vector2(350, -283)
+position = Vector2(3222.7783, -287.25)
 scale = Vector2(5.9888887, 5.9888887)
 texture = ExtResource("13_r2ac1")
 flip_h = true
