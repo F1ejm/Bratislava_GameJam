@@ -46,7 +46,7 @@ texture = ExtResource("3_w23k6")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="StaticBody2D" unique_id=130742245]
 emitting = false
 amount = 32
-lifetime = 0.24000000000000002
+lifetime = 0.24
 one_shot = true
 explosiveness = 0.47
 randomness = 0.16
