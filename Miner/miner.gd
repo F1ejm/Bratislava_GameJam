@@ -90,8 +90,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func upgradesmenuopen():
-	#get_tree().paused = true	
-	pass
+	get_parent().upgradesmenuopen()
 
 func itempicked(itemname: String, isactive: bool):
 	if(isactive):
