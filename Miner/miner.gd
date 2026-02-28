@@ -31,6 +31,9 @@ var warning : bool = true
 
 @onready var player_camera: Camera2D = $"../PlayerCamera"
 
+@export var iskry :CPUParticles2D
+@export var iskry1 : CPUParticles2D
+
 func _ready() -> void:
 	global_position.x = 3500
 	anim.play("drill")
@@ -134,3 +137,15 @@ func spawnTail(number: int):
 	else:
 		$TailSP.get_child(0).spawnTail(number+1)
 		
+
+func iskra():
+	iskry.emitting = true
+	iskry1.emitting =true
+	$Timer.start()
+	
+
+
+func _on_timer_timeout() -> void:
+	iskry.emitting = false
+	iskry1.emitting =false
+	
