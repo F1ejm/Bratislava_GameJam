@@ -4,6 +4,7 @@ var mouse: Vector2i
 
 @export var tile :TileMap
 @export var player : CharacterBody2D
+@export var mark : Marker2D
 
 # 2:3
 var hight:=  60
@@ -12,12 +13,12 @@ var width:= 90
 var cave :=1
 
 @export var radius: int = 20
-@export var noise_strength: float = 1.05
+@export var noise_strength: float = 1.1
 @export var tile_id: int = 0
 @export var atlas_coords: Vector2i = Vector2i(0, 0)
 
 func _ready():
-	randomize()
+	
 	global_position = Vector2(0,0)
 
 func _process(delta: float) -> void:
@@ -26,19 +27,18 @@ func _process(delta: float) -> void:
 	var pos_cell = tile.local_to_map(player.position)
 	var data = tile.get_cell_tile_data(0,pos_cell)
 	if data:
+		print(data.get_custom_data("marek"))
 		if data.get_custom_data("marek")== 1:
 			player.IsFalling = true
-			print(data.get_custom_data("marek"))
+			
 	else:
 		player.IsFalling = false
 		
 	
 
-
-
 func draw_rough_circle(center: Vector2i, r: int):
 	for x in range(-r - 5, r + 5):
-		for y in range(-r - 5, r + 5):
+		for y in range(-r - 9, r + 10):
 			
 			var dist = Vector2(x, y).length()
 			
@@ -51,9 +51,10 @@ func draw_rough_circle(center: Vector2i, r: int):
 
 
 func _on_timer_timeout() -> void:
-	var x = randi_range(-1,1)*(randi_range(100,300))
+	var x = randi_range(-1,1)*(randi_range(100,400))
 	var y = (randi_range(300,800))
 	var pos = tile.local_to_map(Vector2(player.position)+Vector2(x,y))
-	draw_rough_circle(pos,9)
-	pos += Vector2i(10,6)
-	draw_rough_circle(pos,7)
+	draw_rough_circle(pos,13)
+	
+	#pos += Vector2i(10,6)
+	#draw_rough_circle(pos,7)

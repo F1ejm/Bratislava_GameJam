@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	
 	Global.score =round(scoref)
 	
-	print(Global.score)
+	#print(Global.score)
 	
 	if (Global.score % 20 > 5 and Global.score > 20):
 		upgradesmenuopen()

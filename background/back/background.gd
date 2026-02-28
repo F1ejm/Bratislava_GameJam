@@ -3,7 +3,7 @@ extends TileMap
 @export var tile: TileMap
 @export var player : CharacterBody2D
 
-@export var hight:=  60
+@export var hight:=  70
 @export var width:= 60
 
 func _process(delta: float) -> void:

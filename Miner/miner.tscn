@@ -61,9 +61,6 @@ motion_mode = 1
 script = ExtResource("1_qjko8")
 anim = NodePath("AnimationPlayer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=178859463]
-shape = SubResource("CircleShape2D_2degd")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1998998221]
 position = Vector2(0, 14.81)
 scale = Vector2(0.615, 0.615)

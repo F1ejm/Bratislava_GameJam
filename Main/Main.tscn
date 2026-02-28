@@ -12,17 +12,21 @@
 [node name="background" parent="." unique_id=2010711369 node_paths=PackedStringArray("player") instance=ExtResource("3_amygn")]
 player = NodePath("../Miner")
 
-[node name="Cave" parent="." unique_id=1266497843 node_paths=PackedStringArray("player") instance=ExtResource("3_6aewd")]
-player = NodePath("../Miner")
-
 [node name="Trail" parent="." unique_id=368303599 node_paths=PackedStringArray("player") instance=ExtResource("1_lxy7q")]
 texture_filter = 1
 texture_repeat = 1
 player = NodePath("../Miner")
 
+[node name="Cave" parent="." unique_id=1266497843 node_paths=PackedStringArray("player", "mark") instance=ExtResource("3_6aewd")]
+player = NodePath("../Miner")
+mark = NodePath("../Miner/Marker2D")
+
 [node name="Miner" parent="." unique_id=543357979 instance=ExtResource("2_83ytx")]
 
 [node name="StoneSpawner" parent="Miner" unique_id=870286894 instance=ExtResource("4_ps1la")]
+
+[node name="Marker2D" type="Marker2D" parent="Miner" unique_id=1688035200]
+position = Vector2(0, 44)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1279858724]
 
