@@ -55,22 +55,22 @@ func refresh():
 			"Brakes":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/hamulec.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "When you preess 'spacebar' it makes drill move slower"
+				currentcollumn.itemdesc = "When you preess spacebar it makes drill move slower"
 				currentcollumn.isActive = true
 			"Invicibility":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/invincibility.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "Makes you invincible for some time 'spacebar'"
+				currentcollumn.itemdesc = "Makes you invincible for some time spacebar"
 				currentcollumn.isActive = true
 			"Rock Smasher":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/rock_break.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "For sometime you are able to destroy rocks 'spacebar'"
+				currentcollumn.itemdesc = "For sometime you are able to destroy rocks spacebar"
 				currentcollumn.isActive =true
 			"SPEEEEEEED!!!":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/rozpierdol.png")
 				currentcollumn.itemname = currentitem
-				currentcollumn.itemdesc = "Gives you extra speed 'spacebar'"
+				currentcollumn.itemdesc = "Gives you extra speed spacebar"
 				currentcollumn.isActive =true
 	item_column.refresh()
 	item_column_2.refresh()
