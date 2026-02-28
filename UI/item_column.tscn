@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://giujk4tubfiu"]
+
+[ext_resource type="Script" uid="uid://c1i0gl7uwraku" path="res://UI/item_column.gd" id="1_ukcbb"]
+[ext_resource type="Texture2D" uid="uid://clja0o7h1mlf6" path="res://grafiki/boosts/hamulec.png" id="1_wx408"]
+[ext_resource type="Texture2D" uid="uid://cs0mkxf3dgpki" path="res://grafiki/ui/back_normal.png" id="2_ukcbb"]
+
+[node name="ItemColumn" type="VBoxContainer" unique_id=303769563]
+size_flags_horizontal = 3
+script = ExtResource("1_ukcbb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1190748880]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_wx408")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=141902867]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 44
+text = "Brakes
+"
+fit_content = true
+tab_size = 12
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1640167084]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 20
+text = "Jakiś opisaaaaaaaaa
+"
+fit_content = true
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=823015952]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_ukcbb")
+stretch_mode = 5
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

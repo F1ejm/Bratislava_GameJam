@@ -15,6 +15,12 @@ var upgcavecontrol: int = 0
 
 var torotation = 0
 
+var FirAciteveItem: String
+var SecAciteveItem: String
+var ThiAciteveItem: String
+var ActiveFull: bool = false
+
+
 @export var anim : AnimationPlayer
 
 @onready var player_camera: Camera2D = $"../PlayerCamera"
@@ -66,9 +72,39 @@ func _physics_process(delta: float) -> void:
 	
 	Global.score =round(scoref)
 	
+	print(Global.score)
+	
+	if (Global.score % 20 > 5 and Global.score > 20):
+		upgradesmenuopen()
 	
 	move_and_slide()
+
+func upgradesmenuopen():
+	var scene := preload("res://UI/upgrade.tscn")
+	var upgrades := scene.instantiate()
+	get_owner().add_child(upgrades) 
+	get_tree().paused = true	
+
+func itempicked(itemname: String, isactive: bool):
+	if(isactive):
+		pass
+	else:
+		match itemname:
+			"Brakes":
+				pass
+		
+
+func setActiveItem(itemname: String):
+	if(FirAciteveItem.is_empty()):
+		FirAciteveItem = itemname
+	elif(SecAciteveItem.is_empty()):
+		SecAciteveItem = itemname
+	elif(ThiAciteveItem.is_empty()):
+		ThiAciteveItem = itemname
+		ActiveFull = true
 	
+
+
 func spawnTail(number: int):
 	if($TailSP.get_children().is_empty()):
 		var scene := preload("res://Miner/tail.tscn")
