@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bper726qsvdl2"]
+
+[ext_resource type="Script" uid="uid://bsc746cq506kw" path="res://background/cave/cave.gd" id="1_llptb"]
+[ext_resource type="Texture2D" uid="uid://b12sbw66xwsfl" path="res://grafiki/tilemap1.png" id="1_rbi1u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlasb"]
+texture = ExtResource("1_rbi1u")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+2:1/0 = 0
+2:1/0/custom_data_0 = 1
+3:1/0 = 0
+3:1/0/custom_data_0 = 1
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gsbfn"]
+custom_data_layer_0/name = "marek"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_rlasb")
+
+[node name="Cave" type="TileMap" unique_id=1266497843 node_paths=PackedStringArray("tile")]
+tile_set = SubResource("TileSet_gsbfn")
+format = 2
+script = ExtResource("1_llptb")
+tile = NodePath(".")
+
+[node name="Timer" type="Timer" parent="." unique_id=798776316]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

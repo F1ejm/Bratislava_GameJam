@@ -22,9 +22,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	
-	#for h in hight:
-		#for w in width:
-			#tile.set_cell(0,Vector2i(w,player.position.y+h+50),3,Vector2(randi_range(0,7),randi_range(2,7)),0)
+	
 	
 	var clicked_cell = tile.local_to_map(player.position)
 	var tile_p = tile.get_neighbor_cell(clicked_cell,TileSet.CELL_NEIGHBOR_RIGHT_SIDE)
@@ -37,16 +35,8 @@ func _process(delta: float) -> void:
 	tile.set_cell(0,tile_l,3,Vector2(2,0),0)
 	tile.set_cell(0,tile_p,3,Vector2(2,0),0)
 	
-	#tile.erase_cell(0,clicked_cell)
-	var data = tile.get_cell_tile_data(0, clicked_cell)
-	
-	#if data:
-		#print(data.get_custom_data("Marek"))
-		#pass
-	#else:
-		#pass
-#erase_cell()
 
+	
 
 
 func timeout() -> void:
