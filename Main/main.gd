@@ -13,6 +13,8 @@ var items := [
 	"SPEEEEEEED!!!"]
 	
 
+func _ready() -> void:
+	$PlayerCamera.position = $Miner.position
 
 func upgradesmenuopen():
 	#upgrade.show()

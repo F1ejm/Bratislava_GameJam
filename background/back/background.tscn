@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chwbpdhqnx6t3" path="res://grafiki/tilemap_rocks.png" id="2_4pk2o"]
 [ext_resource type="Script" uid="uid://btxel3biohfjm" path="res://background/back/background.gd" id="2_o35lf"]
 [ext_resource type="Texture2D" uid="uid://crmre6h4dwut7" path="res://grafiki/tilemap_rocks_mirrored.png" id="3_r3oqu"]
+[ext_resource type="Texture2D" uid="uid://bym6h7td6pmbn" path="res://grafiki/grass.png" id="4_r3oqu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o35lf"]
 texture = ExtResource("1_ht07d")
@@ -202,11 +203,31 @@ texture = ExtResource("3_r3oqu")
 3:7/0 = 0
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.35971832, -8, 0.35971832, 8, -8, 8, -8, -8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3u17"]
+texture = ExtResource("4_r3oqu")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_r3oqu"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_o35lf")
 sources/3 = SubResource("TileSetAtlasSource_7jpnx")
 sources/4 = SubResource("TileSetAtlasSource_twpcv")
+sources/5 = SubResource("TileSetAtlasSource_l3u17")
 
 [node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("tile")]
 scale = Vector2(5, 5)

@@ -30,6 +30,7 @@ var IsFalling: bool = false
 @onready var player_camera: Camera2D = $"../PlayerCamera"
 
 func _ready() -> void:
+	global_position.x = 3500
 	anim.play("drill")
 	for i in range(0,20):
 		spawnTail(1)
