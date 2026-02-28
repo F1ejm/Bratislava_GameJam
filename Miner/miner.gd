@@ -33,7 +33,7 @@ var warning : bool = true
 
 func _ready() -> void:
 	global_position.x = 3500
-	global_position.y -= 300
+	global_position.y -= 500
 	anim.play("drill")
 
 

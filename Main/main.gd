@@ -58,3 +58,7 @@ func upgradesmenuopen():
 	upgrade.show()
 	get_tree().paused = true
 	
+
+
+func BAZA(area: Area2D) -> void:
+	pass # Replace with function body.
