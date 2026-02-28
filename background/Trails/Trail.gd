@@ -12,13 +12,12 @@ var width:= 90
 var cave :=1
 
 @export var radius: int = 20
-@export var noise_strength: float = 1.2
+@export var noise_strength: float = 1.05
 @export var tile_id: int = 0
 @export var atlas_coords: Vector2i = Vector2i(0, 0)
 
 func _ready():
 	randomize()
-	draw_rough_circle(Vector2i(0, 0), radius)
 	global_position = Vector2(0,0)
 
 func _process(delta: float) -> void:
