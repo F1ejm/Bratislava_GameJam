@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
-const minSPEED = 70.0
+const minSPEED = 150.0
 const maxSPEED = 700.0
 var currentSPEED = 200.0
-const maxhistory = 1000
+const maxhistory = 200
+var scoref: float = 0.0
 
 var torotation = 0
 
 @onready var player_camera: Camera2D = $"../PlayerCamera"
 
 func _ready() -> void:
-	for i in range(0,10):
+	for i in range(0,20):
 		spawnTail(1)
 
 func _physics_process(delta: float) -> void:
@@ -23,7 +24,8 @@ func _physics_process(delta: float) -> void:
 	direction.y += 35
 	#print(direction)
 	
-	currentSPEED += (0.35 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50
+	currentSPEED += (0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50
+	
 	
 	if (currentSPEED < minSPEED):
 		currentSPEED = minSPEED
@@ -47,6 +49,13 @@ func _physics_process(delta: float) -> void:
 		Global.history.pop_back()
 	
 	Global.currentSPEED = currentSPEED
+	
+	Global.scoremulti = round(1+((currentSPEED / 200)-1)**2)
+	
+	scoref += currentSPEED * Global.scoremulti /5000
+	
+	Global.score =round(scoref)
+	
 	
 	move_and_slide()
 	
