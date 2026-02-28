@@ -7,16 +7,155 @@
 [ext_resource type="PackedScene" uid="uid://bbnb0dj0jfa7e" path="res://background/back/background.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://yxfr0kw4eqgt" path="res://Main/StoneSpawner.tscn" id="4_ps1la"]
 [ext_resource type="PackedScene" uid="uid://b4xyqh8b3xpph" path="res://UI/upgrade.tscn" id="5_6aewd"]
-[ext_resource type="Script" path="res://Main/ore_spawner.gd" id="7_qd626"]
+[ext_resource type="Script" uid="uid://c0jc5h62o651y" path="res://Main/ore_spawner.gd" id="7_qd626"]
 [ext_resource type="Texture2D" uid="uid://devg5dioucfib" path="res://grafiki/budynek.png" id="8_h5g1y"]
 [ext_resource type="Texture2D" uid="uid://btt8gfwa2nhbs" path="res://grafiki/dzwig.png" id="9_qd626"]
 [ext_resource type="Texture2D" uid="uid://45d8ie3hfcq6" path="res://grafiki/komin2.png" id="10_6ivxk"]
 [ext_resource type="Texture2D" uid="uid://bmyp4flim8bow" path="res://grafiki/pixil-frame-0_8.png" id="11_6yo1i"]
 [ext_resource type="Texture2D" uid="uid://duu4wvyhme6uk" path="res://grafiki/rampa.png" id="12_lrfe7"]
 [ext_resource type="Texture2D" uid="uid://c27wef3lmgtss" path="res://grafiki/2 domek.png" id="13_r2ac1"]
+[ext_resource type="Texture2D" uid="uid://da0x04qboi6qn" path="res://grafiki/toryy.png" id="15_6yo1i"]
+[ext_resource type="Texture2D" uid="uid://bigsf3lnhwmer" path="res://grafiki/wagonik.png" id="16_lrfe7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qd626"]
 size = Vector2(196, 218)
+
+[sub_resource type="Animation" id="Animation_r2ac1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Wagonik:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2237.0002, -172)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Wagonik2:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2880.0002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Wagonik2:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Wagonik3:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2123.0002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Wagonik3:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_d3r6l"]
+resource_name = "wagon1"
+length = 10.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Wagonik:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.05, 3.57, 6.09, 7.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2237.0002, -172), Vector2(2672, -172), Vector2(2672, -172), Vector2(3615, -172), Vector2(3596, -172)]
+}
+
+[sub_resource type="Animation" id="Animation_fayjp"]
+resource_name = "wagon2"
+length = 11.666667
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Wagonik2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 0),
+"points": PackedFloat32Array(3566, -0.25, 0, 0.25, 0, 2880.0002, -0.6509107, 114.3333, 0, 0, 2880.0002, -0.16041403, 0, 0, 0, 2145, -0.34859198, 122.50005, 0, 0, 2145, -0.12648027, 0, 0, 0, 3606.0002, -0.2251966, -221.65172, 0.015424411, 15.181611),
+"times": PackedFloat32Array(0, 3.905464, 4.867948, 6.9595, 7.7183814, 10.833333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Wagonik2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 0),
+"points": PackedFloat32Array(-172, -0.25, 0, 0.25, 0, -172, -0.6509107, 0, 0, 0, -172, -0.16041403, 0, 0, 0, -172, -0.34859198, 0, 0, 0, -172, -0.12648027, 0, 0, 0, -172, -0.2251966, 0, 0.01850923, 0),
+"times": PackedFloat32Array(0, 3.905464, 4.867948, 6.9595, 7.7183814, 10.833333)
+}
+
+[sub_resource type="Animation" id="Animation_j2iu7"]
+resource_name = "wagon3"
+length = 25.033333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Wagonik3:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(2123.0002, -0.0005, 0, 0.0005, 0, 3615, -2.515227, -248.66664, 0, 0),
+"times": PackedFloat32Array(0.0009999999, 15.092362)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Wagonik3:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-172, -0.0005, 0, 0.0005, 0, -172, -2.515227, 0, 0, 0),
+"times": PackedFloat32Array(0.0009999999, 15.092362)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4nmm"]
+_data = {
+&"RESET": SubResource("Animation_r2ac1"),
+&"wagon1": SubResource("Animation_d3r6l"),
+&"wagon2": SubResource("Animation_fayjp"),
+&"wagon3": SubResource("Animation_j2iu7")
+}
 
 [node name="Main" type="Node2D" unique_id=2043031081]
 script = ExtResource("1_u2i7p")
@@ -75,35 +214,32 @@ visible = false
 self_modulate = Color(0.98, 0.735, 0.735, 1)
 z_index = 3
 texture_filter = 1
-position = Vector2(2593.7778, -292.25003)
+position = Vector2(2809, -292)
 scale = Vector2(6.805555, 6.805555)
 texture = ExtResource("8_h5g1y")
 
 [node name="Dzwig" type="Sprite2D" parent="." unique_id=94333824]
-z_index = 3
 texture_filter = 1
-position = Vector2(2481.778, -391.25)
+position = Vector2(2582, -403)
 scale = Vector2(5.1749997, 5.1749997)
 texture = ExtResource("9_qd626")
 
 [node name="Komin2" type="Sprite2D" parent="." unique_id=1804534970]
 z_index = 3
 texture_filter = 1
-position = Vector2(3754, -328)
+position = Vector2(4030, -336)
 scale = Vector2(6.5625, 6.03125)
 texture = ExtResource("10_6ivxk")
 
 [node name="PixilFrame08" type="Sprite2D" parent="." unique_id=1800816549]
-z_index = 3
 texture_filter = 1
-position = Vector2(2964.778, -346.25)
+position = Vector2(3134, -346)
 scale = Vector2(8.125, 8.125)
 texture = ExtResource("11_6yo1i")
 
 [node name="Rampa" type="Sprite2D" parent="." unique_id=98880928]
-z_index = 3
 texture_filter = 1
-position = Vector2(3461, -351)
+position = Vector2(3461, -383.99997)
 scale = Vector2(5.4375, 5.4658756)
 texture = ExtResource("12_lrfe7")
 
@@ -111,7 +247,7 @@ texture = ExtResource("12_lrfe7")
 self_modulate = Color(1, 1, 1, 0.78431374)
 z_index = 3
 texture_filter = 1
-position = Vector2(3118.7783, -279.25)
+position = Vector2(3689.9998, -279)
 scale = Vector2(5.9888887, 5.9888887)
 texture = ExtResource("13_r2ac1")
 flip_h = true
@@ -122,6 +258,39 @@ position = Vector2(3498, -313)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1038489944]
 position = Vector2(0, 57)
 shape = SubResource("RectangleShape2D_qd626")
+
+[node name="Toryy" type="Sprite2D" parent="." unique_id=33813446]
+texture_filter = 1
+position = Vector2(3268, -152)
+scale = Vector2(2, 2)
+texture = ExtResource("15_6yo1i")
+
+[node name="Toryy2" type="Sprite2D" parent="." unique_id=1305356432]
+texture_filter = 1
+position = Vector2(2361, -152)
+scale = Vector2(2, 2)
+texture = ExtResource("15_6yo1i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=291072817]
+libraries/ = SubResource("AnimationLibrary_j4nmm")
+
+[node name="Wagonik" type="Sprite2D" parent="AnimationPlayer" unique_id=452992514]
+texture_filter = 1
+position = Vector2(2237.0002, -172)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("16_lrfe7")
+
+[node name="Wagonik2" type="Sprite2D" parent="AnimationPlayer" unique_id=1589588277]
+texture_filter = 1
+position = Vector2(2880.0002, -172)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("16_lrfe7")
+
+[node name="Wagonik3" type="Sprite2D" parent="AnimationPlayer" unique_id=1656626014]
+texture_filter = 1
+position = Vector2(2123.0002, -172)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("16_lrfe7")
 
 [connection signal="timeout" from="Miner/OreSpawner/Timer" to="Miner/OreSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
