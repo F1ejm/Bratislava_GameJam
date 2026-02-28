@@ -9,8 +9,9 @@
 radius = 13.46
 height = 27.56
 
-[node name="Stone" type="Node2D" unique_id=1802670844 groups=["Kamien"]]
+[node name="Stone" type="Node2D" unique_id=1802670844 node_paths=PackedStringArray("particle") groups=["Kamien"]]
 script = ExtResource("1_g5l2f")
+particle = NodePath("StaticBody2D/CPUParticles2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1539757182 groups=["Kamien"]]
 
@@ -41,3 +42,22 @@ shape = SubResource("CapsuleShape2D_1l3w4")
 texture_filter = 1
 position = Vector2(-0.24, 2)
 texture = ExtResource("3_w23k6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="StaticBody2D" unique_id=130742245]
+emitting = false
+amount = 32
+lifetime = 0.24000000000000002
+one_shot = true
+explosiveness = 0.47
+randomness = 0.16
+emission_shape = 1
+emission_sphere_radius = 4.2
+spread = 155.25
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 75.0
+damping_min = 3.125
+damping_max = 3.75
+scale_amount_min = 10.0
+scale_amount_max = 18.0
+color = Color(0.3366075, 0.33660766, 0.3366076, 1)
