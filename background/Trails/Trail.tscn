@@ -15,6 +15,7 @@ texture = ExtResource("1_v51hn")
 3:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_w8d6i"]
+tile_size = Vector2i(12, 12)
 custom_data_layer_0/name = "Marek"
 custom_data_layer_0/type = 2
 sources/2 = SubResource("TileSetAtlasSource_cwp5f")
@@ -22,6 +23,5 @@ sources/2 = SubResource("TileSetAtlasSource_cwp5f")
 [node name="Trail" type="TileMap" unique_id=368303599 node_paths=PackedStringArray("tile")]
 tile_set = SubResource("TileSet_w8d6i")
 format = 2
-layer_0/tile_data = PackedInt32Array(393215, 0, 0, 327680, 0, 0, 393216, 0, 0, 458751, 0, 0, 327682, 131072, 0, 393218, 131072, 0, 393219, 131072, 0, 327683, 131072, 0)
 script = ExtResource("1_fy6wo")
 tile = NodePath(".")
