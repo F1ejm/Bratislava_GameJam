@@ -33,12 +33,13 @@ var warning : bool = true
 
 func _ready() -> void:
 	global_position.x = 3500
+	global_position.y -= 300
 	
 	anim.play("drill")
 
 
 func _physics_process(delta: float) -> void:
-	
+
 	
 	if IsFalling:
 		$CPUParticles2D.emitting = false

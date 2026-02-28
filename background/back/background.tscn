@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chwbpdhqnx6t3" path="res://grafiki/tilemap_rocks.png" id="2_4pk2o"]
 [ext_resource type="Script" uid="uid://btxel3biohfjm" path="res://background/back/background.gd" id="2_o35lf"]
 [ext_resource type="Texture2D" uid="uid://crmre6h4dwut7" path="res://grafiki/tilemap_rocks_mirrored.png" id="3_r3oqu"]
-[ext_resource type="Texture2D" uid="uid://bym6h7td6pmbn" path="res://grafiki/grass.png" id="4_r3oqu"]
+[ext_resource type="Texture2D" uid="uid://br3kmjpfnkdtj" path="res://grafiki/grass.png" id="4_r3oqu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o35lf"]
 texture = ExtResource("1_ht07d")
@@ -235,3 +235,7 @@ tile_set = SubResource("TileSet_r3oqu")
 format = 2
 script = ExtResource("2_o35lf")
 tile = NodePath(".")
+
+[node name="Timer" type="Timer" parent="." unique_id=1980483264]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
