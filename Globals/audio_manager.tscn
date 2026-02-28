@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cvmuk0qkc1788" path="res://Audio/speed_up.mp3" id="7_r6l1c"]
 
 [node name="AudioManager" type="Node" unique_id=1287916313]
+process_mode = 3
 script = ExtResource("1_kho5r")
 
 [node name="CarBrake" type="AudioStreamPlayer" parent="." unique_id=983270617]

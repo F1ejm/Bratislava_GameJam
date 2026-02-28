@@ -4,13 +4,10 @@
 [ext_resource type="Script" uid="uid://nm4468qa5p5f" path="res://UI/main_menu.gd" id="1_tcix6"]
 [ext_resource type="Texture2D" uid="uid://bd32bvywqg0fn" path="res://grafiki/ui/play_pressed.png" id="2_cafmx"]
 [ext_resource type="Texture2D" uid="uid://dmlhy648dxoj2" path="res://grafiki/ui/play_hover.png" id="3_tcix6"]
-[ext_resource type="Texture2D" uid="uid://bmximpgq41ywg" path="res://grafiki/ui/options_normal.png" id="4_mmlvu"]
-[ext_resource type="Texture2D" uid="uid://bq36mcgxjqt5" path="res://grafiki/ui/options_pressed.png" id="5_aorne"]
 [ext_resource type="Script" uid="uid://ceth774hd2w2a" path="res://UI/button.gd" id="5_mmlvu"]
-[ext_resource type="Texture2D" uid="uid://kq3aq74rmbfe" path="res://grafiki/ui/options_hover.png" id="6_bpm4f"]
-[ext_resource type="Texture2D" uid="uid://drxspepwc3074" path="res://grafiki/ui/quit_normal.png" id="7_7137b"]
-[ext_resource type="Texture2D" uid="uid://i5a3rj3sjk5l" path="res://grafiki/ui/quit_pressed.png" id="8_voib7"]
-[ext_resource type="Texture2D" uid="uid://b1i3208hip1v" path="res://grafiki/ui/quit_hover.png" id="9_t2nhh"]
+[ext_resource type="Texture2D" uid="uid://cv136xd4w1emr" path="res://grafiki/ui/options_help_normal.png" id="6_k0a0m"]
+[ext_resource type="Texture2D" uid="uid://cuowomqqnwq6n" path="res://grafiki/ui/options_help_pressed.png" id="7_2mudq"]
+[ext_resource type="Texture2D" uid="uid://bjr2wi6yygt6a" path="res://grafiki/ui/options_help_hover.png" id="8_cafmx"]
 
 [node name="MainMenu" type="Control" unique_id=2083007817]
 layout_mode = 3
@@ -21,59 +18,40 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tcix6")
 
-[node name="Label" type="Label" parent="." unique_id=2101817428]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 180.0
-offset_right = 304.0
-offset_bottom = 203.0
-text = "SZPOnt diggin"
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=358168360]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -322.0
+offset_right = 296.0
+offset_bottom = 322.0
+grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
 
-[node name="Play" type="TextureButton" parent="." unique_id=1186865152]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=978770948]
+layout_mode = 2
+text = "Cave Rush"
+
+[node name="Play" type="TextureButton" parent="VBoxContainer" unique_id=1186865152]
 texture_filter = 1
 custom_minimum_size = Vector2(256, 64)
-layout_mode = 0
-offset_left = 48.0
-offset_top = 227.0
-offset_right = 304.0
-offset_bottom = 291.0
-grow_vertical = 2
+layout_mode = 2
 texture_normal = ExtResource("1_2mudq")
 texture_pressed = ExtResource("2_cafmx")
 texture_hover = ExtResource("3_tcix6")
 stretch_mode = 0
 script = ExtResource("5_mmlvu")
 
-[node name="Options" type="TextureButton" parent="." unique_id=2012975552]
+[node name="OptionsHelp" type="TextureButton" parent="VBoxContainer" unique_id=1873278272]
 texture_filter = 1
-custom_minimum_size = Vector2(256, 64)
-layout_mode = 0
-offset_left = 48.0
-offset_top = 315.0
-offset_right = 304.0
-offset_bottom = 379.0
-grow_vertical = 2
-texture_normal = ExtResource("4_mmlvu")
-texture_pressed = ExtResource("5_aorne")
-texture_hover = ExtResource("6_bpm4f")
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+texture_normal = ExtResource("6_k0a0m")
+texture_pressed = ExtResource("7_2mudq")
+texture_hover = ExtResource("8_cafmx")
 stretch_mode = 0
-script = ExtResource("5_mmlvu")
 
-[node name="Quit" type="TextureButton" parent="." unique_id=1926963002]
-texture_filter = 1
-custom_minimum_size = Vector2(256, 64)
-layout_mode = 0
-offset_left = 48.0
-offset_top = 403.0
-offset_right = 304.0
-offset_bottom = 467.0
-grow_vertical = 2
-texture_normal = ExtResource("7_7137b")
-texture_pressed = ExtResource("8_voib7")
-texture_hover = ExtResource("9_t2nhh")
-stretch_mode = 0
-script = ExtResource("5_mmlvu")
-
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
