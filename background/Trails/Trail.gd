@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		pass
 	else:
 		pass
-
+#erase_cell()
 
 func _ready() -> void:
 	global_position = Vector2(0,0)
