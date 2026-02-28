@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bbnb0dj0jfa7e"]
 
 [ext_resource type="Texture2D" uid="uid://b12sbw66xwsfl" path="res://grafiki/tilemap1.png" id="1_ht07d"]
+[ext_resource type="Texture2D" uid="uid://chwbpdhqnx6t3" path="res://grafiki/tilemap_rocks.png" id="2_4pk2o"]
 [ext_resource type="Script" uid="uid://btxel3biohfjm" path="res://background/back/background.gd" id="2_o35lf"]
+[ext_resource type="Texture2D" uid="uid://crmre6h4dwut7" path="res://grafiki/tilemap_rocks_mirrored.png" id="3_r3oqu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o35lf"]
 texture = ExtResource("1_ht07d")
@@ -66,8 +68,80 @@ texture = ExtResource("1_ht07d")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jpnx"]
+texture = ExtResource("2_4pk2o")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twpcv"]
+texture = ExtResource("3_r3oqu")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_r3oqu"]
 sources/0 = SubResource("TileSetAtlasSource_o35lf")
+sources/3 = SubResource("TileSetAtlasSource_7jpnx")
+sources/4 = SubResource("TileSetAtlasSource_twpcv")
 
 [node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("tile")]
 scale = Vector2(5, 5)
