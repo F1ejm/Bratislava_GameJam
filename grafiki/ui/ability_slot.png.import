@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br3kmjpfnkdtj"
-path="res://.godot/imported/grass.png-f759c8e27a24cf45d92cb9c60e29cff8.ctex"
+uid="uid://ubdy4pbwooqb"
+path="res://.godot/imported/ability_slot.png-e2923118d80549e3f6c3f07652554a36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grafiki/grass.png"
-dest_files=["res://.godot/imported/grass.png-f759c8e27a24cf45d92cb9c60e29cff8.ctex"]
+source_file="res://grafiki/ui/ability_slot.png"
+dest_files=["res://.godot/imported/ability_slot.png-e2923118d80549e3f6c3f07652554a36.ctex"]
 
 [params]
 
