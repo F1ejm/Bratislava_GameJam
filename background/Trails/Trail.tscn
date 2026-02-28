@@ -1,31 +1,10 @@
 [gd_scene format=3 uid="uid://dlwqgq3s82vfb"]
 
 [ext_resource type="Script" uid="uid://d31ihke7lpypw" path="res://background/Trails/Trail.gd" id="1_fy6wo"]
-[ext_resource type="Texture2D" uid="uid://xq7dhec046le" path="res://grafiki/Sprite-0001.png" id="1_v51hn"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_turm7"]
-texture = ExtResource("1_v51hn")
-0:0/0 = 0
-0:0/0/custom_data_0 = 1
-1:0/0 = 0
-1:0/0/custom_data_0 = 1
-2:0/0 = 0
-2:0/0/custom_data_0 = 2
-3:0/0 = 0
-3:0/0/custom_data_0 = 2
-0:1/0 = 0
-0:1/0/custom_data_0 = 1
-1:1/0 = 0
-1:1/0/custom_data_0 = 1
-2:1/0 = 0
-2:1/0/custom_data_0 = 2
-3:1/0 = 0
-3:1/0/custom_data_0 = 2
 
 [sub_resource type="TileSet" id="TileSet_w8d6i"]
 custom_data_layer_0/name = "Marek"
 custom_data_layer_0/type = 2
-sources/0 = SubResource("TileSetAtlasSource_turm7")
 
 [node name="Trail" type="TileMap" unique_id=368303599 node_paths=PackedStringArray("tile")]
 tile_set = SubResource("TileSet_w8d6i")
@@ -33,5 +12,3 @@ format = 2
 layer_0/tile_data = PackedInt32Array(393215, 0, 0, 327680, 0, 0, 393216, 0, 0, 458751, 0, 0, 327682, 131072, 0, 393218, 131072, 0, 393219, 131072, 0, 327683, 131072, 0)
 script = ExtResource("1_fy6wo")
 tile = NodePath(".")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1831079814]
