@@ -1,12 +1,55 @@
 [gd_scene format=3 uid="uid://bkh1l86ybykfh"]
 
 [ext_resource type="Script" uid="uid://b65wqngnhjbyb" path="res://Miner/miner.gd" id="1_qjko8"]
+[ext_resource type="Texture2D" uid="uid://cocsmookrc5ij" path="res://grafiki/pixil-frame-0_2.png" id="2_d2glt"]
+[ext_resource type="Texture2D" uid="uid://6shuns8sthti" path="res://grafiki/pixil-frame-0_3.png" id="3_yrdpm"]
+[ext_resource type="Texture2D" uid="uid://c4cslq2cuofd6" path="res://grafiki/pixil-frame-0_4.png" id="4_jklhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2degd"]
 
-[node name="Miner" type="CharacterBody2D" unique_id=543357979]
+[sub_resource type="Animation" id="Animation_6ed8r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_d2glt")]
+}
+
+[sub_resource type="Animation" id="Animation_gsura"]
+resource_name = "drill"
+length = 0.25
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.106666684, 0.21333337),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_d2glt"), ExtResource("3_yrdpm"), ExtResource("4_jklhs")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrdpm"]
+_data = {
+&"RESET": SubResource("Animation_6ed8r"),
+&"drill": SubResource("Animation_gsura")
+}
+
+[node name="Miner" type="CharacterBody2D" unique_id=543357979 node_paths=PackedStringArray("anim")]
 motion_mode = 1
 script = ExtResource("1_qjko8")
+anim = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=178859463]
 shape = SubResource("CircleShape2D_2degd")
@@ -18,3 +61,13 @@ shape = SubResource("CircleShape2D_2degd")
 
 [node name="TailSP" type="Node2D" parent="." unique_id=1198123025]
 position = Vector2(0, -15)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=865181432]
+libraries/ = SubResource("AnimationLibrary_yrdpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=34137725]
+texture_filter = 1
+texture_repeat = 1
+rotation = 3.1415927
+scale = Vector2(1.8173195, 1.8173194)
+texture = ExtResource("2_d2glt")

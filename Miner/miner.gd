@@ -8,9 +8,12 @@ var scoref: float = 0.0
 
 var torotation = 0
 
+@export var anim : AnimationPlayer
+
 @onready var player_camera: Camera2D = $"../PlayerCamera"
 
 func _ready() -> void:
+	anim.play("drill")
 	for i in range(0,20):
 		spawnTail(1)
 
