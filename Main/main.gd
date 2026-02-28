@@ -9,7 +9,7 @@ var trauma = 0.0
 var trauma_power = 2
 
 func _process(delta: float) -> void:
-	add_trauma(6)
+	#add_trauma(4)
 	
 	if follow_node:
 		global_position = follow_node.global_position
