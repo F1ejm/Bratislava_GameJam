@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c27wef3lmgtss" path="res://grafiki/2 domek.png" id="13_r2ac1"]
 [ext_resource type="Texture2D" uid="uid://da0x04qboi6qn" path="res://grafiki/toryy.png" id="15_6yo1i"]
 [ext_resource type="Texture2D" uid="uid://bigsf3lnhwmer" path="res://grafiki/wagonik.png" id="16_lrfe7"]
+[ext_resource type="Script" uid="uid://cmhfsogjibqpw" path="res://Skrypt/animation_player.gd" id="16_r2ac1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2ac1"]
 texture = ExtResource("5_lrfe7")
@@ -303,7 +304,8 @@ texture = ExtResource("15_6yo1i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=291072817]
 libraries/ = SubResource("AnimationLibrary_j4nmm")
-autoplay = &"wagon3"
+autoplay = &"wagon2"
+script = ExtResource("16_r2ac1")
 
 [node name="Wagonik" type="Sprite2D" parent="AnimationPlayer" unique_id=452992514]
 texture_filter = 1
