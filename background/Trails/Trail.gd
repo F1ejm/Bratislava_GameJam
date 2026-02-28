@@ -21,8 +21,10 @@ func _ready():
 	global_position = Vector2(0,0)
 
 func _process(delta: float) -> void:
-	
+
 	if player.IsFalling:
+		pass
+	elif player.global_position.y < -20:
 		pass
 	else:
 		var clicked_cell = tile.local_to_map(player.position)

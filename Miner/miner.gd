@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var minSPEED = 150.0
 var maxSPEED = 700.0
-var currentSPEED = 200.0
+var currentSPEED = 300.0
 const maxhistory = 500
 var scoref: float = 0.0
 
@@ -33,12 +33,13 @@ var warning : bool = true
 
 func _ready() -> void:
 	global_position.x = 3500
-	global_position.y -= 100
+	global_position.y -= 300
+	
 	anim.play("drill")
 
 
 func _physics_process(delta: float) -> void:
-	
+
 	
 	if IsFalling:
 		$CPUParticles2D.emitting = false
