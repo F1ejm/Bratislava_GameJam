@@ -36,6 +36,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	
+	if IsFalling:
+		$CPUParticles2D.emitting = false
+	else:
+		$CPUParticles2D.emitting = true
+	
 	var direction := (get_global_mouse_position() - self.global_position).normalized() * 100
 	if direction.y < 0:
 		direction.y = 0

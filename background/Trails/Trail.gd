@@ -22,18 +22,19 @@ func _ready():
 
 func _process(delta: float) -> void:
 	
-	
-	
-	var clicked_cell = tile.local_to_map(player.position)
-	var tile_p = tile.get_neighbor_cell(clicked_cell,TileSet.CELL_NEIGHBOR_RIGHT_SIDE)
-	var tile_l = tile.get_neighbor_cell(clicked_cell,TileSet.CELL_NEIGHBOR_LEFT_SIDE)
-	var tile_d = tile.get_neighbor_cell(clicked_cell,TileSet.CELL_NEIGHBOR_BOTTOM_SIDE)
-	
-	
-	tile.set_cell(0,clicked_cell,3,Vector2(2,0),0)
-	tile.set_cell(0,tile_d,3,Vector2(2,0),0)
-	tile.set_cell(0,tile_l,3,Vector2(2,0),0)
-	tile.set_cell(0,tile_p,3,Vector2(2,0),0)
+	if player.IsFalling:
+		pass
+	else:
+		var clicked_cell = tile.local_to_map(player.position)
+		var tile_p = tile.get_neighbor_cell(clicked_cell,TileSet.CELL_NEIGHBOR_RIGHT_SIDE)
+		var tile_l = tile.get_neighbor_cell(clicked_cell,TileSet.CELL_NEIGHBOR_LEFT_SIDE)
+		var tile_d = tile.get_neighbor_cell(clicked_cell,TileSet.CELL_NEIGHBOR_BOTTOM_SIDE)
+		
+		
+		tile.set_cell(0,clicked_cell,3,Vector2(2,0),0)
+		tile.set_cell(0,tile_d,3,Vector2(2,0),0)
+		tile.set_cell(0,tile_l,3,Vector2(2,0),0)
+		tile.set_cell(0,tile_p,3,Vector2(2,0),0)
 	
 
 	
