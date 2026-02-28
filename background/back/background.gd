@@ -14,9 +14,21 @@ func _process(delta: float) -> void:
 			tile.set_cell(0,Vector2i(w,player.position.y+h+50),0,Vector2(randi_range(0,7),randi_range(2,7)),0)
 	for h in hight:
 		tile.set_cell(0,Vector2i(-1,player.position.y + h),4,Vector2i(3,randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-2,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-3,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-4,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-5,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-6,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-7,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(-8,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
 		tile.set_cell(0,Vector2i(80,player.position.y + h),3,Vector2i(0,randi_range(0,7)),0)
-	
-
+		tile.set_cell(0,Vector2i(81,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(82,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(83,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(84,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(85,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(86,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
+		tile.set_cell(0,Vector2i(87,player.position.y + h),4,Vector2i(randi_range(0,2),randi_range(0,7)),0)
 
 func _ready() -> void:
 	global_position = Vector2(0,0)
