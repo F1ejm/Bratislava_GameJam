@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		(direction * 1000).normalized()
 		
 	direction.y += 35
-	print(direction)
+	#print(direction)
 	
 	currentSPEED += (0.35 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50
 	

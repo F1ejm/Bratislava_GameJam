@@ -75,6 +75,7 @@ texture = ExtResource("1_ht07d")
 sources/0 = SubResource("TileSetAtlasSource_4pk2o")
 
 [node name="background" type="TileMap" unique_id=2010711369 node_paths=PackedStringArray("tile")]
+scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_r3oqu")
 format = 2
 script = ExtResource("2_o35lf")

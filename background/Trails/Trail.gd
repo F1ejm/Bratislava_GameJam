@@ -12,7 +12,7 @@ var width:= 90
 func _process(delta: float) -> void:
 	for h in hight:
 		for w in width:
-			tile.set_cell(0,Vector2i(w,player.position.y+h+50),2,Vector2(0,0),0)
+			tile.set_cell(0,Vector2i(w,player.position.y+h+50),3,Vector2(0,0),0)
 	
 
 	
@@ -47,5 +47,5 @@ func _ready() -> void:
 	global_position = Vector2(0,0)
 	for h in hight:
 		for w in width:
-			tile.set_cell(0,Vector2i(w,h),2,Vector2(1,1),0)
+			tile.set_cell(0,Vector2i(w,h),3,Vector2(1,1),0)
 	
