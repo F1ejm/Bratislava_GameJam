@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://o70yjr1hxa7g"]
+
+[ext_resource type="Script" uid="uid://casujgyl3bxey" path="res://Main/ore.gd" id="1_llwgu"]
+[ext_resource type="Texture2D" uid="uid://uhbstf0hjg3w" path="res://grafiki/ore3.png" id="2_cbdgn"]
+
+[sub_resource type="Gradient" id="Gradient_cbdgn"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3oapc"]
+gradient = SubResource("Gradient_cbdgn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Ore" type="Node2D" unique_id=1181980348]
+scale = Vector2(4, 4)
+script = ExtResource("1_llwgu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=711159228]
+z_index = 25
+texture_filter = 1
+texture = ExtResource("2_cbdgn")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=197148170]
+range_z_max = 20
+texture = SubResource("GradientTexture2D_3oapc")

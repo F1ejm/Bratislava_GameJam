@@ -34,7 +34,6 @@ var warning : bool = true
 func _ready() -> void:
 	global_position.x = 3500
 	global_position.y -= 300
-	
 	anim.play("drill")
 
 
@@ -139,11 +138,13 @@ func _input(event):
 
 func spawnTail(number: int):
 	if($TailSP.get_children().is_empty()):
+		print("current")
 		var scene := preload("res://Miner/tail.tscn")
 		var tail := scene.instantiate()
 		tail.number = number
-		$TailSP.add_child(tail)
+		$TailSP.add_child(tail)		
 	else:
+		print("next")
 		$TailSP.get_child(0).spawnTail(number+1)
 		
 

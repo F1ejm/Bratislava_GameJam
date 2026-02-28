@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dt23x88tuc512" path="res://grafiki/rock3.png" id="3_w23k6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1l3w4"]
-radius = 14.055
-height = 28.11
+radius = 13.46
+height = 27.56
 
 [node name="Stone" type="Node2D" unique_id=1802670844]
 script = ExtResource("1_g5l2f")
@@ -20,7 +20,8 @@ shape = SubResource("CapsuleShape2D_1l3w4")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=937376122]
 texture_filter = 1
-position = Vector2(1, 2)
+position = Vector2(2, 2)
+scale = Vector2(1.11, 1.11)
 texture = ExtResource("1_yveq7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1031291733]
@@ -29,7 +30,7 @@ shape = SubResource("CapsuleShape2D_1l3w4")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2" unique_id=377984047]
 texture_filter = 1
-position = Vector2(-1, -1)
+position = Vector2(-1.075, -0.41)
 texture = ExtResource("2_g5l2f")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=606666662]
