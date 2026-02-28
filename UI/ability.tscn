@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chvmr7yk3pmg4"]
 
 [ext_resource type="Script" uid="uid://brlafh84ft2d" path="res://ability.gd" id="1_gcjn1"]
+[ext_resource type="Texture2D" uid="uid://43gs1juq4e88" path="res://icon.svg" id="2_ygimp"]
 
 [node name="Ability" type="Control" unique_id=478020840]
 layout_mode = 3
@@ -14,11 +15,16 @@ script = ExtResource("1_gcjn1")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2009442685]
 modulate = Color(1, 1, 1, 0.5882353)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -63.0
+offset_top = -133.0
+offset_right = 65.0
+offset_bottom = -5.0
+texture = ExtResource("2_ygimp")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1767572825]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -63.0
+offset_top = -133.0
+offset_right = -23.0
+offset_bottom = -93.0
 fill_mode = 4
