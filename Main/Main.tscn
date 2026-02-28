@@ -32,6 +32,13 @@ player = NodePath("../Miner")
 player = NodePath("../Miner")
 mark = NodePath("../Miner/Marker2D")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=335695137]
+offset_left = 1037.0
+offset_top = -1819.0
+offset_right = 5514.0
+offset_bottom = -147.0
+color = Color(0, 0.43518087, 0.43518078, 1)
+
 [node name="Miner" parent="." unique_id=543357979 instance=ExtResource("2_83ytx")]
 position = Vector2(1, 1)
 
