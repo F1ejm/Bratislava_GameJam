@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1i0gl7uwraku" path="res://UI/item_column.gd" id="1_ukcbb"]
 [ext_resource type="Texture2D" uid="uid://clja0o7h1mlf6" path="res://grafiki/boosts/hamulec.png" id="1_wx408"]
+[ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="3_a8mmi"]
 [ext_resource type="Texture2D" uid="uid://blxjx1dpipbtw" path="res://grafiki/ui/select_normal.png" id="3_b2t2q"]
 [ext_resource type="Texture2D" uid="uid://d1r76bsoxq470" path="res://grafiki/ui/select_pressed.png" id="4_a8mmi"]
 [ext_resource type="Texture2D" uid="uid://dwjuwepmg7bhh" path="res://grafiki/ui/select_hover.png" id="5_hik21"]
@@ -19,6 +20,7 @@ stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=141902867]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_a8mmi")
 theme_override_font_sizes/normal_font_size = 44
 text = "Brakes
 "
@@ -29,6 +31,7 @@ horizontal_alignment = 1
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1640167084]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_a8mmi")
 theme_override_font_sizes/normal_font_size = 20
 text = "Jakiś opisaaaaaaaaa
 "
