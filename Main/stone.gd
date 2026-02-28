@@ -13,7 +13,7 @@ func _ready() -> void:
 		2:
 			$StaticBody2D/CollisionShape2D.queue_free()
 			$StaticBody2D/CollisionShape2D2.queue_free()
-	var sca = randf_range(2,25)
+	var sca = randf_range(2,15)
 	scale = Vector2(sca,sca)
 	rotation = randf_range(0,2*PI)
 
