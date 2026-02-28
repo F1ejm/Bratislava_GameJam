@@ -160,17 +160,17 @@ func _input(event):
 			"SPEEEEEEED!!!":
 				AudioManager.speed_up.play()
 				pass
-		print(AciteveItem)
+		#print(AciteveItem)
 
 func spawnTail(number: int):
 	if($TailSP.get_children().is_empty()):
-		print("current")
+		#print("current")
 		var scene := preload("res://Miner/tail.tscn")
 		var tail := scene.instantiate()
 		tail.number = number
 		$TailSP.add_child(tail)		
 	else:
-		print("next")
+		#print("next")
 		$TailSP.get_child(0).spawnTail(number+1)
 
 
@@ -188,10 +188,13 @@ func _on_timer_timeout() -> void:
 
 func body_entered(body: Node2D) -> void:
 	if body.is_in_group("Kamien"):
+		if Global.hp == 1:
+			print("maro")
 		if !rocksmashing:
 			iskra()
 			AudioManager.rock_hit.play()
 			main.add_trauma(2)
+			Global.hp -= 1
 		else:
 			body._particle()
 			body.queue_free()

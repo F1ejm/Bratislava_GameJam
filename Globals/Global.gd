@@ -11,3 +11,5 @@ var score: int = 0
 var scoremulti: int = 0
 
 var game_paused: bool = true
+
+var hp: int = 3

@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	var pos_cell = tile.local_to_map(player.position)
 	var data = tile.get_cell_tile_data(0,pos_cell)
 	if data:
-		print(data.get_custom_data("marek"))
+		#print(data.get_custom_data("marek"))
 		if data.get_custom_data("marek")== 1:
 			player.IsFalling = true
 	else: 

@@ -18,7 +18,7 @@ func _ready() -> void:
 	scale = Vector2(sca,sca)
 	rotation = randf_range(0,2*PI)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	pass
 	
