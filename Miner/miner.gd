@@ -11,6 +11,8 @@ var upgreawards: int = 0
 var upgstone: int = 0
 var upgore: int = 0
 
+var breakingforce: int = 0
+
 var torotation = 0
 
 var AciteveItem: String
@@ -23,6 +25,8 @@ var currentLevel: int = 1
 var IsFalling: bool = false
 
 var warning : bool = true
+
+var rocksmashing: bool = false
 
 @export var anim : AnimationPlayer
 
@@ -58,8 +62,9 @@ func _physics_process(delta: float) -> void:
 	if(IsFalling):
 		currentSPEED += delta * 150
 	else:
-		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50)
+		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50) - breakingforce
 	
+	breakingforce /= 1.3
 	
 	if (currentSPEED < minSPEED):
 		currentSPEED = minSPEED
@@ -132,9 +137,11 @@ func _input(event):
 	if event.is_action_pressed("Use_item"): 
 		match AciteveItem:
 			"Brakes":
-				pass
+				breakingforce = 80
 			"Rock Smasher":
-				pass
+				rocksmashing = true
+				await get_tree().create_timer(10).timeout
+				rocksmashing = false
 			"SPEEEEEEED!!!":
 				pass
 		print(AciteveItem)
@@ -165,5 +172,8 @@ func _on_timer_timeout() -> void:
 
 func body_entered(body: Node2D) -> void:
 	if body.is_in_group("Kamien"):
-		iskra()
-		main.add_trauma(2)
+		if !rocksmashing:
+			iskra()
+			main.add_trauma(2)
+		else:
+			body.queue_free()
