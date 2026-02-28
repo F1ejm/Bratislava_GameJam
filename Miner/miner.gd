@@ -31,6 +31,9 @@ var warning : bool = true
 @export var iskry :CPUParticles2D
 @export var iskry1 : CPUParticles2D
 
+@export var area :Area2D
+
+
 func _ready() -> void:
 	global_position.x = 3500
 	global_position.y -= 500
@@ -146,16 +149,20 @@ func spawnTail(number: int):
 	else:
 		print("next")
 		$TailSP.get_child(0).spawnTail(number+1)
-		
+
 
 func iskra():
 	iskry.emitting = true
 	iskry1.emitting =true
 	$Timer.start()
-	
+
 
 
 func _on_timer_timeout() -> void:
 	iskry.emitting = false
 	iskry1.emitting =false
-	
+
+
+func body_entered(body: Node2D) -> void:
+	if body.is_in_group("Kamien"):
+		iskra()

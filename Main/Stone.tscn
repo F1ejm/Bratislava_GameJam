@@ -9,10 +9,10 @@
 radius = 13.46
 height = 27.56
 
-[node name="Stone" type="Node2D" unique_id=1802670844]
+[node name="Stone" type="Node2D" unique_id=1802670844 groups=["Kamien"]]
 script = ExtResource("1_g5l2f")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1539757182]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1539757182 groups=["Kamien"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=515438229]
 position = Vector2(-1, -2)

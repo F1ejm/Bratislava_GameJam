@@ -7,6 +7,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2degd"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrdpm"]
+radius = 26.0
+height = 98.0
+
 [sub_resource type="Animation" id="Animation_6ed8r"]
 length = 0.001
 tracks/0/type = "value"
@@ -76,6 +80,11 @@ shape = SubResource("CircleShape2D_2degd")
 [node name="TailSP" type="Node2D" parent="." unique_id=1198123025]
 position = Vector2(0, -50)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1011728032]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=34430429]
+shape = SubResource("CapsuleShape2D_yrdpm")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=865181432]
 libraries/ = SubResource("AnimationLibrary_yrdpm")
 
@@ -120,33 +129,36 @@ scale_amount_max = 12.0
 color = Color(0.5436707, 0.30170706, 0.17548245, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=1691136412]
-wait_time = 0.5
 autostart = true
 
 [node name="iskry" type="CPUParticles2D" parent="." unique_id=232818692]
 position = Vector2(0, 46)
 emitting = false
+amount = 11
 spread = 69.75
-initial_velocity_min = 312.5
-initial_velocity_max = 418.75
-scale_amount_min = 1.5
-scale_amount_max = 1.5
+initial_velocity_min = 400.0
+initial_velocity_max = 506.25
+damping_min = 6.875
+damping_max = 20.625
+scale_amount_min = 2.4
+scale_amount_max = 2.4
 color = Color(11.887995, 7.3233166, 0, 1)
 
 [node name="iskry2" type="CPUParticles2D" parent="." unique_id=1359547263]
 position = Vector2(0, 46)
 emitting = false
-amount = 17
+amount = 19
 lifetime = 0.27
 direction = Vector2(1, -5)
 spread = 40.5
 gravity = Vector2(0, 952.345)
-initial_velocity_min = 168.75
-initial_velocity_max = 350.0
+initial_velocity_min = 381.25
+initial_velocity_max = 475.0
 damping_min = 18.125
 damping_max = 18.75
-scale_amount_min = 2.3
-scale_amount_max = 2.3
-color = Color(0.98803645, 0.33361515, 0.35419908, 1)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.8226526, 0.377201, 0.016122455, 1)
 
+[connection signal="body_entered" from="Area2D" to="." method="body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
