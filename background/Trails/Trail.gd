@@ -5,8 +5,9 @@ var mouse: Vector2i
 @export var tile :TileMap
 @export var player : CharacterBody2D
 
+# 2:3
 var hight:=  60
-var width:= 60
+var width:= 90
 
 func _process(delta: float) -> void:
 	for h in hight:
