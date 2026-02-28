@@ -176,15 +176,16 @@ position = Vector2(-1007.99994, -164)
 scale = Vector2(1.44, 1.44)
 texture = ExtResource("14_6ivxk")
 
+[node name="Toryy2" type="Sprite2D" parent="." unique_id=1044713494]
+z_index = -1
+texture_filter = 1
+position = Vector2(185, -150)
+scale = Vector2(2.055, 2.055)
+texture = ExtResource("15_6yo1i")
+
 [node name="Toryy" type="Sprite2D" parent="." unique_id=57725163]
 z_index = -1
 texture_filter = 1
 position = Vector2(-710, -150)
 scale = Vector2(2.055, 2.055)
-texture = ExtResource("15_6yo1i")
-
-[node name="Toryy" type="Sprite2D" parent="Toryy" unique_id=1044713494]
-z_index = -1
-texture_filter = 1
-position = Vector2(435.5231, 3.33786e-06)
 texture = ExtResource("15_6yo1i")
