@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bwixap0f7ovkb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s31xd"]
+radius = 50.0
+
+[node name="Stone" type="Node2D" unique_id=1802670844]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1539757182]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1885684128]
+shape = SubResource("CircleShape2D_s31xd")

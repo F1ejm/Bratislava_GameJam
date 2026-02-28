@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://yxfr0kw4eqgt"]
+
+[ext_resource type="Script" uid="uid://c08jrldpvft8o" path="res://Main/stone_spawner.gd" id="1_3oklr"]
+
+[node name="StoneSpawner" type="Node2D" unique_id=870286894]
+script = ExtResource("1_3oklr")
+
+[node name="Timer" type="Timer" parent="." unique_id=1475625458]
+process_callback = 0
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

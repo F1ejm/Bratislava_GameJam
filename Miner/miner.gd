@@ -1,10 +1,17 @@
 extends CharacterBody2D
 
-const minSPEED = 150.0
-const maxSPEED = 700.0
+var minSPEED = 150.0
+var maxSPEED = 700.0
 var currentSPEED = 200.0
-const maxhistory = 200
+const maxhistory = 500
 var scoref: float = 0.0
+
+var upgturn: int = 0
+var upgreawards: int = 0
+var upgspeed: int = 0
+var upgstone: int = 0
+var upgore: int = 0
+var upgcavecontrol: int = 0
 
 var torotation = 0
 
@@ -27,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	direction.y += 35
 	#print(direction)
 	
-	currentSPEED += (0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50
+	currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50 * (1 + upgspeed/10))
 	
 	
 	if (currentSPEED < minSPEED):
@@ -37,11 +44,11 @@ func _physics_process(delta: float) -> void:
 	
 	torotation = atan2(direction.y, direction.x) - PI/2
 	
-	self.rotation= rotate_toward(self.rotation,torotation,delta *3)
+	self.rotation= rotate_toward(self.rotation,torotation,delta * (3 + upgturn))
 	
 	player_camera.position.x = lerp(player_camera.position.x,self.position.x, 0.02 - ((currentSPEED / maxSPEED) * 0.005))
 	
-	player_camera.position.y = lerp(player_camera.position.y,self.position.y, 0.04 + ((currentSPEED / maxSPEED) * 0.05))
+	player_camera.position.y = lerp(player_camera.position.y,self.position.y + 120, 0.04 + ((currentSPEED / maxSPEED) * 0.05))
 	
 	velocity = Vector2.RIGHT.rotated(self.rotation + PI/2) * currentSPEED
 	
