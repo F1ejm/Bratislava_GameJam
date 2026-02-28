@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bmh6ayt5nmsvf"]
+
+[ext_resource type="Texture2D" uid="uid://4l65py3gju78" path="res://grafiki/ui/play_normal.png" id="1_2mudq"]
+[ext_resource type="Script" uid="uid://nm4468qa5p5f" path="res://UI/main_menu.gd" id="1_tcix6"]
+[ext_resource type="Texture2D" uid="uid://bd32bvywqg0fn" path="res://grafiki/ui/play_pressed.png" id="2_cafmx"]
+[ext_resource type="Texture2D" uid="uid://dmlhy648dxoj2" path="res://grafiki/ui/play_hover.png" id="3_tcix6"]
+[ext_resource type="Texture2D" uid="uid://bmximpgq41ywg" path="res://grafiki/ui/options_normal.png" id="4_mmlvu"]
+[ext_resource type="Texture2D" uid="uid://bq36mcgxjqt5" path="res://grafiki/ui/options_pressed.png" id="5_aorne"]
+[ext_resource type="Script" uid="uid://ceth774hd2w2a" path="res://UI/button.gd" id="5_mmlvu"]
+[ext_resource type="Texture2D" uid="uid://kq3aq74rmbfe" path="res://grafiki/ui/options_hover.png" id="6_bpm4f"]
+[ext_resource type="Texture2D" uid="uid://drxspepwc3074" path="res://grafiki/ui/quit_normal.png" id="7_7137b"]
+[ext_resource type="Texture2D" uid="uid://i5a3rj3sjk5l" path="res://grafiki/ui/quit_pressed.png" id="8_voib7"]
+[ext_resource type="Texture2D" uid="uid://b1i3208hip1v" path="res://grafiki/ui/quit_hover.png" id="9_t2nhh"]
+
+[node name="MainMenu" type="Control" unique_id=2083007817]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tcix6")
+
+[node name="Label" type="Label" parent="." unique_id=2101817428]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 180.0
+offset_right = 304.0
+offset_bottom = 203.0
+text = "SZPOnt diggin"
+
+[node name="Play" type="TextureButton" parent="." unique_id=1186865152]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 0
+offset_left = 48.0
+offset_top = 227.0
+offset_right = 304.0
+offset_bottom = 291.0
+grow_vertical = 2
+texture_normal = ExtResource("1_2mudq")
+texture_pressed = ExtResource("2_cafmx")
+texture_hover = ExtResource("3_tcix6")
+stretch_mode = 0
+script = ExtResource("5_mmlvu")
+
+[node name="Options" type="TextureButton" parent="." unique_id=2012975552]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 0
+offset_left = 48.0
+offset_top = 315.0
+offset_right = 304.0
+offset_bottom = 379.0
+grow_vertical = 2
+texture_normal = ExtResource("4_mmlvu")
+texture_pressed = ExtResource("5_aorne")
+texture_hover = ExtResource("6_bpm4f")
+stretch_mode = 0
+script = ExtResource("5_mmlvu")
+
+[node name="Quit" type="TextureButton" parent="." unique_id=1926963002]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 0
+offset_left = 48.0
+offset_top = 403.0
+offset_right = 304.0
+offset_bottom = 467.0
+grow_vertical = 2
+texture_normal = ExtResource("7_7137b")
+texture_pressed = ExtResource("8_voib7")
+texture_hover = ExtResource("9_t2nhh")
+stretch_mode = 0
+script = ExtResource("5_mmlvu")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
