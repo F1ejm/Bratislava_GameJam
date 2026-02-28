@@ -47,7 +47,7 @@ func refresh():
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"
 				currentcollumn.isActive = false
-			"The Rock":
+			"Less Rock":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/minus_kamienie.png")
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "null"

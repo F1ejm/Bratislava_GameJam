@@ -8,16 +8,13 @@ var scoref: float = 0.0
 
 var upgturn: int = 0
 var upgreawards: int = 0
-var upgspeed: int = 0
 var upgstone: int = 0
 var upgore: int = 0
-var upgcavecontrol: int = 0
 
 var torotation = 0
 
-var FirAciteveItem: String
-var SecAciteveItem: String
-var ThiAciteveItem: String
+var AciteveItem: String
+
 var ActiveFull: bool = false
 
 var nextUpgrade: int = 100
@@ -34,8 +31,7 @@ var warning : bool = true
 func _ready() -> void:
 	global_position.x = 3500
 	anim.play("drill")
-	for i in range(0,20):
-		spawnTail(1)
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -55,7 +51,7 @@ func _physics_process(delta: float) -> void:
 	if(IsFalling):
 		currentSPEED += delta * 150
 	else:
-		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50 * (1 + upgspeed/10))
+		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50)
 	
 	
 	if (currentSPEED < minSPEED):
@@ -106,24 +102,35 @@ func upgradesmenuopen():
 	get_parent().upgradesmenuopen()
 
 func itempicked(itemname: String, isactive: bool):
-	if(isactive):
-		pass
-	else:
+	spawnTail(1)
+	if(!isactive):
 		match itemname:
+			"Faster Sterring":
+				upgturn += 1
+			"Better Luck":
+				upgore += 1
+			"Less Rock":
+				upgstone += 1
+			"Money!":
+				upgreawards += 1
+				
+	else:
+		AciteveItem = itemname
+		ActiveFull = true
+		$"..".items.erase("Brakes")
+		$"..".items.erase("Rock Smasher")
+		$"..".items.erase("SPEEEEEEED!!!")
+
+func _input(event): 
+	if event.is_action_pressed("Use_item"): 
+		match AciteveItem:
 			"Brakes":
 				pass
-		
-
-func setActiveItem(itemname: String):
-	if(FirAciteveItem.is_empty()):
-		FirAciteveItem = itemname
-	elif(SecAciteveItem.is_empty()):
-		SecAciteveItem = itemname
-	elif(ThiAciteveItem.is_empty()):
-		ThiAciteveItem = itemname
-		ActiveFull = true
-	
-
+			"Rock Smasher":
+				pass
+			"SPEEEEEEED!!!":
+				pass
+		print(AciteveItem)
 
 func spawnTail(number: int):
 	if($TailSP.get_children().is_empty()):

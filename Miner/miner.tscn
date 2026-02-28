@@ -103,7 +103,7 @@ texture = SubResource("GradientTexture2D_6ed8r")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1756662190]
 position = Vector2(0, 43)
 amount = 13
-lifetime = 0.21000000000000002
+lifetime = 0.21
 explosiveness = 0.13
 randomness = 0.52
 emission_shape = 1
