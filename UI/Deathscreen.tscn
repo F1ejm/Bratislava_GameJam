@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://c2no1hadfatl0"]
+[gd_scene format=3 uid="uid://dk6fi336kvumd"]
 
-[ext_resource type="Script" uid="uid://cgsmnylxk60gj" path="res://UI/deathscreen.gd" id="1_sdug5"]
+[ext_resource type="Script" path="res://UI/deathscreen.gd" id="1_sdug5"]
+[ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="2_xud1b"]
+[ext_resource type="Texture2D" uid="uid://iqbdyw4ljfx8" path="res://grafiki/ui/reset_normal.png" id="3_e1lxg"]
+[ext_resource type="Texture2D" uid="uid://clidjv5cloe5a" path="res://grafiki/ui/reset_pressed.png" id="4_buhvs"]
+[ext_resource type="Texture2D" uid="uid://3djhvg7sijqr" path="res://grafiki/ui/reset_hover.png" id="5_5bq81"]
 
 [node name="Deathscreen" type="Control" unique_id=862900667 node_paths=PackedStringArray("label")]
 modulate = Color(1, 1, 1, 0)
@@ -46,13 +50,17 @@ layout_mode = 2
 theme_override_constants/margin_top = 152
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1908043675]
+texture_filter = 1
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xud1b")
 theme_override_font_sizes/font_size = 34
-text = "score:"
+text = "Score:"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=2109985985]
+texture_filter = 1
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xud1b")
 theme_override_font_sizes/font_size = 34
 horizontal_alignment = 1
 
@@ -60,9 +68,13 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/margin_top = 97
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1384592162]
+[node name="Button" type="TextureButton" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1135034792]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-theme_override_font_sizes/font_size = 58
-text = "restart"
+texture_normal = ExtResource("3_e1lxg")
+texture_pressed = ExtResource("4_buhvs")
+texture_hover = ExtResource("5_5bq81")
+stretch_mode = 5
 
 [connection signal="button_down" from="ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_button_down"]
