@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://hwforr48xfok"]
+
+[ext_resource type="Script" uid="uid://dc7iewygnvct2" path="res://UI/item_slot.gd" id="1_obcmo"]
+[ext_resource type="Texture2D" uid="uid://ubdy4pbwooqb" path="res://grafiki/ui/ability_slot.png" id="1_yshqi"]
+
+[node name="ItemSlot" type="Control" unique_id=2051117392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_obcmo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2023965195]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=845963990]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_yshqi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=294087196]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=941899832]
+texture_filter = 1
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 4
+stretch_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=31505324]
+layout_mode = 2
+size_flags_vertical = 1
+fill_mode = 3
+show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=232321408]
+visible = false
+layout_mode = 2
+color = Color(0, 0.76862746, 0, 0.27058825)

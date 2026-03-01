@@ -42,6 +42,7 @@ var items := [
 	"Faster Sterring",
 	"Better Luck",
 	"Less Rock",
+	"Health",
 	"Money!",
 	"Brakes",
 	"Rock Smasher",

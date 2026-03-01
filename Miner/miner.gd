@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
 var minSPEED = 150.0
-var maxSPEED = 600.0
+var maxSPEED = 800.0
 var currentSPEED = 200.0
 const maxhistory = 500
 var scoref: float = 0.0
 
+var itemcooldown: bool = false
+
 var startlock: bool = false
+
+@onready var item_slot: Control = $CanvasLayer/ItemSlot
 
 var camerazoom = 1.0
 
@@ -89,7 +93,7 @@ func _physics_process(delta: float) -> void:
 		if(IsFalling):
 			currentSPEED += delta * 150
 		else:
-			currentSPEED += (((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50) * 1 + int(zooming) / 2) - breakingforce
+			currentSPEED += (((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 20) * (1 + int(zooming))) - breakingforce
 		
 	breakingforce /= 1.3
 	if Global.hp > 0:
@@ -149,6 +153,7 @@ func upgradesmenuopen():
 
 func itempicked(itemname: String, isactive: bool):
 	spawnTail(1)
+	spawnTail(1)
 	if(!isactive):
 		match itemname:
 			"Faster Sterring":
@@ -159,8 +164,16 @@ func itempicked(itemname: String, isactive: bool):
 				upgstone += 2
 			"Money!":
 				upgreawards += 2
-				
+			"Health":
+				Global.hp += 1
 	else:
+		match itemname:
+			"Brakes":
+				item_slot.changepic("res://grafiki/boosts/hamulec.png")
+			"Rock Smasher":
+				item_slot.changepic("res://grafiki/boosts/rock_break.png")
+			"SPEEEEEEED!!!":
+				item_slot.changepic("res://grafiki/boosts/rozpierdol.png")
 		AciteveItem = itemname
 		ActiveFull = true
 		$"..".items.erase("Brakes")
@@ -168,21 +181,37 @@ func itempicked(itemname: String, isactive: bool):
 		$"..".items.erase("SPEEEEEEED!!!")
 
 func _input(event): 
-	if event.is_action_pressed("Use_item"): 
+	if event.is_action_pressed("Use_item") and !itemcooldown: 
 		match AciteveItem:
 			"Brakes":
+				itemcooldown = true
 				breakingforce = 80
 				AudioManager.car_brake.play()
+				item_slot.fill_progress_bar(20)
+				await get_tree().create_timer(10).timeout
+				itemcooldown = false
 			"Rock Smasher":
+				itemcooldown = true
 				AudioManager.rock_break.play()
 				rocksmashing = true
+				item_slot.item_turned_on(10)
 				await get_tree().create_timer(10).timeout
 				rocksmashing = false
+				item_slot.fill_progress_bar(30)
+				await get_tree().create_timer(30).timeout
+				itemcooldown = false
 			"SPEEEEEEED!!!":
+				itemcooldown = true
 				AudioManager.speed_up.play()
+				maxSPEED = 1000
 				zooming = true
-				await get_tree().create_timer(10).timeout
+				item_slot.item_turned_on(5)
+				await get_tree().create_timer(5).timeout
 				zooming = false
+				maxSPEED = 800
+				item_slot.fill_progress_bar(15)
+				await get_tree().create_timer(15).timeout
+				itemcooldown = false
 		#print(AciteveItem)
 
 func spawnTail(number: int):

@@ -42,6 +42,11 @@ func refresh():
 				currentcollumn.itemname = currentitem
 				currentcollumn.itemdesc = "Increases your score"
 				currentcollumn.isActive = false
+			"Health":
+				currentcollumn.itemimage = preload("res://grafiki/żarówka.png")
+				currentcollumn.itemname = currentitem
+				currentcollumn.itemdesc = "Restores Health"
+				currentcollumn.isActive = false
 			"Better Luck":
 				currentcollumn.itemimage = preload("res://grafiki/boosts/plus_rudy.png")
 				currentcollumn.itemname = currentitem

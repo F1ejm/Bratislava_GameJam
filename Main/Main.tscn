@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c2no1hadfatl0" path="res://UI/Deathscreen.tscn" id="7_fayjp"]
 [ext_resource type="Script" uid="uid://c0jc5h62o651y" path="res://Main/ore_spawner.gd" id="7_qd626"]
 [ext_resource type="Texture2D" uid="uid://devg5dioucfib" path="res://grafiki/budynek.png" id="8_h5g1y"]
+[ext_resource type="PackedScene" uid="uid://hwforr48xfok" path="res://UI/ItemSlot.tscn" id="9_ggtbl"]
 [ext_resource type="Texture2D" uid="uid://btt8gfwa2nhbs" path="res://grafiki/dzwig.png" id="9_qd626"]
 [ext_resource type="Texture2D" uid="uid://45d8ie3hfcq6" path="res://grafiki/komin2.png" id="10_6ivxk"]
 [ext_resource type="PackedScene" uid="uid://bmh6ayt5nmsvf" path="res://UI/main_menu.tscn" id="10_d3r6l"]
@@ -217,6 +218,15 @@ offset_right = 0.0
 grow_horizontal = 0
 
 [node name="Deathscreen" parent="Miner/CanvasLayer" parent_id_path=PackedInt32Array(543357979, 107405696) index="2" unique_id=862900667 instance=ExtResource("7_fayjp")]
+
+[node name="ItemSlot" parent="Miner/CanvasLayer" parent_id_path=PackedInt32Array(543357979, 107405696) index="3" unique_id=2051117392 instance=ExtResource("9_ggtbl")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+grow_vertical = 0
+scale = Vector2(2, 2)
+size_flags_vertical = 8
 
 [node name="StoneSpawner" parent="Miner" unique_id=870286894 instance=ExtResource("4_ps1la")]
 
