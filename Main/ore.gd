@@ -19,10 +19,10 @@ func refresh():
 		worth = 100
 	elif(rand < 50):
 		oretype = 2
-		worth = 50
+		worth = 75
 	else:
 		oretype = 1
-		worth = 20
+		worth = 50
 		
 	var original_tex = $PointLight2D.texture
 	var new_tex = original_tex.duplicate()

@@ -15,6 +15,8 @@ var upgreawards: int = 0
 var upgstone: int = 0
 var upgore: int = 0
 
+var zooming: bool = false
+
 var breakingforce: int = 0
 
 var torotation = 0
@@ -87,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		if(IsFalling):
 			currentSPEED += delta * 150
 		else:
-			currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50) - breakingforce
+			currentSPEED += (((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50) * 1 + int(zooming) / 2) - breakingforce
 		
 	breakingforce /= 1.3
 	if Global.hp > 0:
@@ -124,9 +126,9 @@ func _physics_process(delta: float) -> void:
 	
 	Global.scoremulti = round(1+((currentSPEED / 200)-1)**2)
 	
-	scoref += currentSPEED * Global.scoremulti /5000
+	Global.score += currentSPEED * Global.scoremulti /5000
 	
-	Global.score =round(scoref)
+	
 	
 	#print(Global.score)
 	
@@ -178,7 +180,9 @@ func _input(event):
 				rocksmashing = false
 			"SPEEEEEEED!!!":
 				AudioManager.speed_up.play()
-				pass
+				zooming = true
+				await get_tree().create_timer(10).timeout
+				zooming = false
 		#print(AciteveItem)
 
 func spawnTail(number: int):
