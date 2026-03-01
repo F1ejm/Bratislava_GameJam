@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cocsmookrc5ij" path="res://grafiki/pixil-frame-0_2.png" id="2_d2glt"]
 [ext_resource type="Texture2D" uid="uid://6shuns8sthti" path="res://grafiki/pixil-frame-0_3.png" id="3_yrdpm"]
 [ext_resource type="Texture2D" uid="uid://c4cslq2cuofd6" path="res://grafiki/pixil-frame-0_4.png" id="4_jklhs"]
-[ext_resource type="Script" uid="uid://0g13sduaokdl" path="res://Miner/score.gd" id="5_jklhs"]
+[ext_resource type="Script" path="res://Miner/score.gd" id="5_jklhs"]
 [ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="6_6ed8r"]
+[ext_resource type="Script" uid="uid://cu0gmnlc2aekq" path="res://Miner/hp.gd" id="7_bp6j4"]
+[ext_resource type="Texture2D" uid="uid://na3bcqelu4in" path="res://grafiki/żarówka.png" id="7_invcs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2degd"]
 
@@ -172,6 +174,54 @@ grow_horizontal = 2
 theme_override_fonts/normal_font = ExtResource("6_6ed8r")
 bbcode_enabled = true
 horizontal_alignment = 1
+
+[node name="hp" type="Control" parent="CanvasLayer" unique_id=143848606 node_paths=PackedStringArray("rect1", "rect2", "rect3")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_bp6j4")
+rect1 = NodePath("MarginContainer/HBoxContainer/TextureRect")
+rect2 = NodePath("MarginContainer/HBoxContainer/TextureRect3")
+rect3 = NodePath("MarginContainer/HBoxContainer/TextureRect4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/hp" unique_id=380070784]
+layout_mode = 0
+offset_left = 807.0
+offset_right = 1348.0
+offset_bottom = 150.0
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/hp/MarginContainer" unique_id=297874122]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/hp/MarginContainer/HBoxContainer" unique_id=633866892]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("7_invcs")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/hp/MarginContainer/HBoxContainer" unique_id=1430163526]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("7_invcs")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/hp/MarginContainer/HBoxContainer" unique_id=1646922652]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+texture = ExtResource("7_invcs")
+expand_mode = 2
+stretch_mode = 4
 
 [connection signal="body_entered" from="Area2D" to="." method="body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -188,10 +188,9 @@ func _on_timer_timeout() -> void:
 
 
 func body_entered(body: Node2D) -> void:
+	print(Global.hp)
 	if body.is_in_group("Kamien"):
 		if !rocksmashing:
-			if Global.hp == 1:
-				print("maro")
 			iskra()
 			AudioManager.rock_hit.play()
 			main.add_trauma(2)
