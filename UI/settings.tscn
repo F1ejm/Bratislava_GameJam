@@ -121,6 +121,7 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1170957517]
+process_mode = 3
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9098039, 0.6627451, 0.17254902, 1)
@@ -135,6 +136,9 @@ horizontal_alignment = 1
 [node name="Label5" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=156761835]
 texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1_7iqql")
 text = "Avoid the rocks.
 

@@ -50,6 +50,8 @@ var items := [
 
 func _ready() -> void:
 	$PlayerCamera.position = $Miner.position
+	if Global.game_paused == true:
+		get_tree().paused = true
 
 func upgradesmenuopen():
 	#upgrade.show()

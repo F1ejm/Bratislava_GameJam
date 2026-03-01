@@ -13,3 +13,10 @@ var scoremulti: int = 0
 var game_paused: bool = true
 
 var hp: int = 3
+
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+func unpause_game():
+	game_paused = false
+	get_tree().paused = false

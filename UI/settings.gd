@@ -1,8 +1,8 @@
 extends Control
 
-@onready var master: HSlider = $VBoxContainer/HSlider
-@onready var music: HSlider = $VBoxContainer/HSlider2
-@onready var sfx: HSlider = $VBoxContainer/HSlider3
+@onready var master: HSlider = $HBoxContainer/VBoxContainer/HSlider
+@onready var music: HSlider = $HBoxContainer/VBoxContainer/HSlider2
+@onready var sfx: HSlider = $HBoxContainer/VBoxContainer/HSlider3
 
 @export var main_menu: Control
 
