@@ -41,6 +41,7 @@ var rocksmashing: bool = false
 @export var drilling_part: CPUParticles2D
 
 
+
 func _ready() -> void:
 	drilling_part.emitting = false
 	global_position.x = 3500
