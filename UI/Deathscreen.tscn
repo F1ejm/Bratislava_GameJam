@@ -1,12 +1,17 @@
-[gd_scene format=3 uid="uid://cqm2n5uv6rocy"]
+[gd_scene format=3 uid="uid://c2no1hadfatl0"]
 
-[node name="Deathscreen" type="Control" unique_id=862900667]
+[ext_resource type="Script" uid="uid://cgsmnylxk60gj" path="res://UI/deathscreen.gd" id="1_sdug5"]
+
+[node name="Deathscreen" type="Control" unique_id=862900667 node_paths=PackedStringArray("label")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sdug5")
+label = NodePath("ColorRect/MarginContainer/VBoxContainer/Label2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1214094911]
 layout_mode = 1
@@ -15,4 +20,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.57254905)
+color = Color(0.13682577, 0.13682574, 0.13682571, 0.29803923)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=598359256]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer" unique_id=753126814]
+layout_mode = 2
+color = Color(0.072842635, 0.072842635, 0.072842635, 0.3372549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=1707685519]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1640872733]
+layout_mode = 2
+theme_override_constants/margin_top = 152
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1908043675]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "score:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=2109985985]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=144617880]
+layout_mode = 2
+theme_override_constants/margin_top = 97
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1384592162]
+layout_mode = 2
+theme_override_font_sizes/font_size = 58
+text = "restart"
+
+[connection signal="button_down" from="ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_button_down"]
