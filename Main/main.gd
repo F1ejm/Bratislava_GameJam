@@ -14,11 +14,11 @@ var p = true
 
 func _process(delta: float) -> void:
 	#add_trauma(4)
-	if p == true:
-		player.drilling_part.emitting = false
-	elif p != true:
-		player.drilling_part.emitting = true
-	
+	#if p == true:
+		#player.drilling_part.emitting = false
+	#elif p != true:
+		#player.drilling_part.emitting = true
+	#
 	if follow_node:
 		global_position = follow_node.global_position
 	

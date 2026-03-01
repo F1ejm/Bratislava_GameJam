@@ -47,7 +47,6 @@ var rocksmashing: bool = false
 
 
 func _ready() -> void:
-	drilling_part.emitting = false
 	global_position.x = 3500
 	global_position.y -= 500
 	anim.play("drill")
@@ -57,16 +56,16 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-
+	
 	
 	if IsFalling:
-		main.p = true
+		#main.p = true
 		$CPUParticles2D.emitting = false
 		if AudioManager.drill.playing == true:
 			AudioManager.drill.stop()
 	else:
 		if Global.hp > 0:
-			main.p = false
+			#main.p = false
 			$CPUParticles2D.emitting = true
 			if AudioManager.drill.playing == false:
 				AudioManager.drill.play()
