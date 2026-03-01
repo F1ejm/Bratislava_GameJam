@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cocsmookrc5ij" path="res://grafiki/pixil-frame-0_2.png" id="2_d2glt"]
 [ext_resource type="Texture2D" uid="uid://6shuns8sthti" path="res://grafiki/pixil-frame-0_3.png" id="3_yrdpm"]
 [ext_resource type="Texture2D" uid="uid://c4cslq2cuofd6" path="res://grafiki/pixil-frame-0_4.png" id="4_jklhs"]
+[ext_resource type="Script" uid="uid://0g13sduaokdl" path="res://Miner/score.gd" id="5_jklhs"]
+[ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="6_6ed8r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2degd"]
 
@@ -144,6 +146,32 @@ damping_max = 18.75
 scale_amount_min = 4.0
 scale_amount_max = 4.0
 color = Color(0.8226526, 0.377201, 0.016122455, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=107405696]
+
+[node name="score" type="Control" parent="CanvasLayer" unique_id=495516007]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_jklhs")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/score" unique_id=681499724]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.0
+offset_top = 16.0
+offset_right = 203.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("6_6ed8r")
+bbcode_enabled = true
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
