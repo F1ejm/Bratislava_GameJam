@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cocsmookrc5ij" path="res://grafiki/pixil-frame-0_2.png" id="2_d2glt"]
 [ext_resource type="Texture2D" uid="uid://6shuns8sthti" path="res://grafiki/pixil-frame-0_3.png" id="3_yrdpm"]
 [ext_resource type="Texture2D" uid="uid://c4cslq2cuofd6" path="res://grafiki/pixil-frame-0_4.png" id="4_jklhs"]
-[ext_resource type="Script" path="res://Miner/score.gd" id="5_jklhs"]
+[ext_resource type="Script" uid="uid://0g13sduaokdl" path="res://Miner/score.gd" id="5_jklhs"]
 [ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="6_6ed8r"]
 [ext_resource type="Script" uid="uid://cu0gmnlc2aekq" path="res://Miner/hp.gd" id="7_bp6j4"]
 [ext_resource type="Texture2D" uid="uid://na3bcqelu4in" path="res://grafiki/żarówka.png" id="7_invcs"]
