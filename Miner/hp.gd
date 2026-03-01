@@ -9,6 +9,10 @@ func _ready() -> void:
 	rect2.texture = preload("res://grafiki/żarówka.png")
 	rect3.texture = preload("res://grafiki/żarówka.png")
 	Global.hp = 3
+	if Global.game_paused == true:
+		hide()
+	else:
+		show()
 
 func _process(delta: float) -> void:
 	if Global.game_paused == true:
