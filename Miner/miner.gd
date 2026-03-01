@@ -19,6 +19,8 @@ var breakingforce: int = 0
 
 var torotation = 0
 
+var deathvisible: float = 0
+
 var AciteveItem: String
 
 var ActiveFull: bool = false
@@ -53,7 +55,7 @@ func _ready() -> void:
 	startlock = true
 	await get_tree().create_timer(2).timeout
 	startlock = false
-
+	$CanvasLayer/Deathscreen.modulate = Color(1,1,1,0)
 
 func _physics_process(delta: float) -> void:
 	
@@ -134,7 +136,9 @@ func _physics_process(delta: float) -> void:
 		nextUpgrade += currentLevel * 200
 	if(isdieing):
 		$"../PlayerCamera".zoom = Vector2(camerazoom,camerazoom)
-		camerazoom = lerp(camerazoom, 2.0, 1.01)
+		camerazoom = lerp(camerazoom, 2.0, delta)
+		deathvisible = lerp(deathvisible, 1.0, delta)
+		$CanvasLayer/Deathscreen.modulate = Color(1,1,1,deathvisible)
 	
 	move_and_slide()
 
