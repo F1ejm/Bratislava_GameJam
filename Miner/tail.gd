@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if(Global.history.size() >= int(round(number*12/(Global.currentSPEED/200)))):
+	if(Global.history.size() >= int(round(number*12/(Global.currentSPEED/200))) and int(round(number*12/(Global.currentSPEED/200))) > 0):
 		global_rotation = Global.history[int(round(number*12/(Global.currentSPEED/200)))-1]
 	$TailSP.global_rotation = 0
 	

@@ -8,6 +8,8 @@ var scoref: float = 0.0
 
 var startlock: bool = false
 
+var camerazoom = 1.0
+
 var upgturn: int = 0
 var upgreawards: int = 0
 var upgstone: int = 0
@@ -25,6 +27,8 @@ var nextUpgrade: int = 100
 var currentLevel: int = 1
 
 var IsFalling: bool = false
+
+var isdieing: bool = false
 
 var warning : bool = true
 
@@ -61,10 +65,15 @@ func _physics_process(delta: float) -> void:
 		if AudioManager.drill.playing == true:
 			AudioManager.drill.stop()
 	else:
-		main.p = false
-		$CPUParticles2D.emitting = true
-		if AudioManager.drill.playing == false:
-			AudioManager.drill.play()
+		if Global.hp > 0:
+			main.p = false
+			$CPUParticles2D.emitting = true
+			if AudioManager.drill.playing == false:
+				AudioManager.drill.play()
+		else:
+			$CPUParticles2D.emitting = false
+			if AudioManager.drill.playing == true:
+				AudioManager.drill.stop()
 	
 	var direction := (get_global_mouse_position() - self.global_position).normalized() * 100
 	if direction.y < 0:
@@ -73,34 +82,37 @@ func _physics_process(delta: float) -> void:
 		
 	direction.y += 35
 	#print(direction)
-	if(IsFalling):
-		currentSPEED += delta * 150
-	else:
-		currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50) - breakingforce
-	
+	if(Global.hp > 0):
+		if(IsFalling):
+			currentSPEED += delta * 150
+		else:
+			currentSPEED += ((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 50) - breakingforce
+		
 	breakingforce /= 1.3
+	if Global.hp > 0:
+		if (currentSPEED < minSPEED):
+			currentSPEED = minSPEED
+		elif(currentSPEED > maxSPEED):
+			currentSPEED = maxSPEED
+		
 	
-	if (currentSPEED < minSPEED):
-		currentSPEED = minSPEED
-	elif(currentSPEED > maxSPEED):
-		currentSPEED = maxSPEED
+	torotation = atan2(direction.y, direction.x) - PI/2
 	if(!startlock):
-		torotation = atan2(direction.y, direction.x) - PI/2
-	
-	$Node2D.rotation = rotate_toward($Node2D.rotation,-torotation,delta * (3 + upgturn))
+		$Node2D.rotation = rotate_toward($Node2D.rotation,-torotation,delta * (3 + upgturn))
 	
 	
 	if IsFalling:
 		torotation = lerp(self.rotation, 0.0, delta * 2)
-	
-	self.rotation= rotate_toward(self.rotation,torotation,delta * (3 + upgturn))
+	if Global.hp > 0:
+		self.rotation= rotate_toward(self.rotation,torotation,delta * (3 + upgturn))
 	
 	player_camera.position.x = lerp(player_camera.position.x,self.position.x, 0.02 - ((currentSPEED / maxSPEED) * 0.005))
 	
 	player_camera.position.y = lerp(player_camera.position.y,self.position.y + 120, 0.04 + ((currentSPEED / maxSPEED) * 0.05))
-	
+
 	velocity = Vector2.RIGHT.rotated(self.rotation + PI/2) * currentSPEED
-	
+	if Global.hp < 1:
+		currentSPEED /= 1.2
 	$TailSP.global_rotation = 0
 	
 	Global.history.push_front(self.global_rotation)
@@ -121,6 +133,9 @@ func _physics_process(delta: float) -> void:
 		upgradesmenuopen()
 		currentLevel += 5
 		nextUpgrade += currentLevel * 200
+	if(isdieing):
+		$"../PlayerCamera".zoom = Vector2(camerazoom,camerazoom)
+		camerazoom = lerp(camerazoom, 2.0, 1.01)
 	
 	move_and_slide()
 
@@ -195,6 +210,9 @@ func body_entered(body: Node2D) -> void:
 			AudioManager.rock_hit.play()
 			main.add_trauma(2)
 			Global.hp -= 1
+			if(Global.hp < 1):
+				isdieing = true
 		else:
-			body._particle()
-			body.queue_free()
+			if(Global.hp > 0):
+				body._particle()
+				body.queue_free()
