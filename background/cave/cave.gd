@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		#print(data.get_custom_data("marek"))
 		if data.get_custom_data("marek")== 1:
 			player.IsFalling = true
+			Global.slow = true
 	else: 
 		player.IsFalling = false
 		
