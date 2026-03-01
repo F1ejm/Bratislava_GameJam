@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cuowomqqnwq6n" path="res://grafiki/ui/options_help_pressed.png" id="7_2mudq"]
 [ext_resource type="Texture2D" uid="uid://bjr2wi6yygt6a" path="res://grafiki/ui/options_help_hover.png" id="8_cafmx"]
 [ext_resource type="PackedScene" uid="uid://og3lp25ts23w" path="res://UI/settings.tscn" id="9_2mudq"]
+[ext_resource type="Texture2D" uid="uid://pc7q0df7xnm5" path="res://grafiki/pixil-frame-0_22.png" id="10_cafmx"]
 
 [node name="MainMenu" type="Control" unique_id=2083007817]
 process_mode = 3
@@ -20,6 +21,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tcix6")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2145356097]
+texture_filter = 1
+custom_minimum_size = Vector2(306, 306)
+layout_mode = 0
+offset_left = 55.0
+offset_top = 61.0
+offset_right = 361.0
+offset_bottom = 367.0
+texture = ExtResource("10_cafmx")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=829037640]
 position = Vector2(576, 324)
 
@@ -28,9 +39,9 @@ texture_filter = 1
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 0
 offset_left = 72.0
-offset_top = 212.0
+offset_top = 252.0
 offset_right = 328.0
-offset_bottom = 276.0
+offset_bottom = 316.0
 texture_normal = ExtResource("1_2mudq")
 texture_pressed = ExtResource("2_cafmx")
 texture_hover = ExtResource("3_tcix6")
@@ -42,9 +53,9 @@ texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
 layout_mode = 0
 offset_left = 72.0
-offset_top = 308.0
+offset_top = 348.0
 offset_right = 328.0
-offset_bottom = 436.0
+offset_bottom = 476.0
 texture_normal = ExtResource("6_k0a0m")
 texture_pressed = ExtResource("7_2mudq")
 texture_hover = ExtResource("8_cafmx")
@@ -53,9 +64,9 @@ script = ExtResource("5_mmlvu")
 
 [node name="Settings" parent="." unique_id=2145115873 node_paths=PackedStringArray("main_menu") instance=ExtResource("9_2mudq")]
 layout_mode = 1
-offset_left = -1152.0
+offset_left = -1168.0
 offset_top = 0.0
-offset_right = -1152.0
+offset_right = -1168.0
 offset_bottom = 0.0
 main_menu = NodePath("..")
 

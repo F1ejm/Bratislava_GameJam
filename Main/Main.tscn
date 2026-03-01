@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bkh1l86ybykfh" path="res://Miner/miner.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://bper726qsvdl2" path="res://background/cave/cave.tscn" id="3_6aewd"]
 [ext_resource type="PackedScene" uid="uid://bbnb0dj0jfa7e" path="res://background/back/background.tscn" id="3_amygn"]
-[ext_resource type="PackedScene" uid="uid://yxfr0kw4eqgt" path="res://Main/StoneSpawner.tscn" id="4_ps1la"]
+[ext_resource type="PackedScene" path="res://Main/StoneSpawner.tscn" id="4_ps1la"]
 [ext_resource type="PackedScene" uid="uid://b4xyqh8b3xpph" path="res://UI/upgrade.tscn" id="5_6aewd"]
 [ext_resource type="Texture2D" uid="uid://br3kmjpfnkdtj" path="res://grafiki/grass.png" id="5_lrfe7"]
-[ext_resource type="PackedScene" uid="uid://c2no1hadfatl0" path="res://UI/Deathscreen.tscn" id="7_fayjp"]
-[ext_resource type="Script" uid="uid://c0jc5h62o651y" path="res://Main/ore_spawner.gd" id="7_qd626"]
+[ext_resource type="PackedScene" uid="uid://dk6fi336kvumd" path="res://UI/Deathscreen.tscn" id="7_fayjp"]
+[ext_resource type="Script" path="res://Main/ore_spawner.gd" id="7_qd626"]
 [ext_resource type="Texture2D" uid="uid://devg5dioucfib" path="res://grafiki/budynek.png" id="8_h5g1y"]
 [ext_resource type="PackedScene" uid="uid://hwforr48xfok" path="res://UI/ItemSlot.tscn" id="9_ggtbl"]
 [ext_resource type="Texture2D" uid="uid://btt8gfwa2nhbs" path="res://grafiki/dzwig.png" id="9_qd626"]
@@ -208,7 +208,10 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1, 1)
 main = NodePath("..")
 
-[node name="MarginContainer" parent="Miner/CanvasLayer/hp" parent_id_path=PackedInt32Array(543357979, 143848606) index="0" unique_id=380070784]
+[node name="hp" parent="Miner/CanvasLayer" parent_id_path=PackedInt32Array(543357979, 107405696) index="1" unique_id=143848606]
+visible = false
+
+[node name="MarginContainer" parent="Miner/CanvasLayer/hp" index="0" unique_id=380070784]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
