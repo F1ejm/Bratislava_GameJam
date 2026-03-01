@@ -24,6 +24,10 @@ config/icon="res://icon.svg"
 Global="*uid://bilox65ngpou6"
 AudioManager="*uid://dpobvv7xllm2g"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 Player=""

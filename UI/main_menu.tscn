@@ -64,9 +64,9 @@ script = ExtResource("5_mmlvu")
 
 [node name="Settings" parent="." unique_id=2145115873 node_paths=PackedStringArray("main_menu") instance=ExtResource("9_2mudq")]
 layout_mode = 1
-offset_left = -1168.0
+offset_left = -1165.0
 offset_top = 0.0
-offset_right = -1168.0
+offset_right = -1165.0
 offset_bottom = 0.0
 main_menu = NodePath("..")
 
