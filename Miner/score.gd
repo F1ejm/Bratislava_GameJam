@@ -28,4 +28,4 @@ func _process(delta: float) -> void:
 			tag1 = "[color=red][wave amp=15 freq=15]"
 			tag2 = "[/wave][/color]"
 	
-	rich_text_label.text = tag1 + "x" + str(Global.scoremulti) + tag2 + " " + str(Global.score)
+	rich_text_label.text = tag1 + "x" + str(Global.scoremulti) + tag2 + " " + str(int(round(Global.score)))
