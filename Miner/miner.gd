@@ -52,6 +52,10 @@ var rocksmashing: bool = false
 @export var area :Area2D
 @export var drilling_part: CPUParticles2D
 
+@export var KillTime : Timer
+
+var in_kamien := false
+
 
 
 func _ready() -> void:
@@ -239,8 +243,11 @@ func _on_timer_timeout() -> void:
 
 
 func body_entered(body: Node2D) -> void:
+	
 	print(Global.hp)
 	if body.is_in_group("Kamien"):
+		in_kamien = true
+		KillTime.start()
 		if !rocksmashing:
 			iskra()
 			AudioManager.rock_hit.play()
@@ -252,3 +259,16 @@ func body_entered(body: Node2D) -> void:
 			if(Global.hp > 0):
 				body._particle()
 				body.queue_free()
+
+func body_exited(body: Node2D) -> void:
+	if body.is_in_group("Kamien"):
+		in_kamien = false
+
+func _on_kill_time_timeout() -> void:
+	if in_kamien:
+		Global.hp -= 1
+		main.add_trauma(2)
+		if(Global.hp < 1):
+				isdieing = true
+		else:
+			KillTime.start()
