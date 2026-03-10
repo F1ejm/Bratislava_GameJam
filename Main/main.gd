@@ -80,3 +80,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		p = false
+		player.currentSPEED = 250
+		add_trauma(1)

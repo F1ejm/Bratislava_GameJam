@@ -149,6 +149,12 @@ func _physics_process(delta: float) -> void:
 		camerazoom = lerp(camerazoom, 2.0, delta)
 		deathvisible = lerp(deathvisible, 1.0, delta)
 		$CanvasLayer/Deathscreen.modulate = Color(1,1,1,deathvisible)
+	if main.p == true:
+		drilling_part.emitting = false
+		global_rotation = 0
+		currentSPEED = 500
+	elif main.p == false:
+		drilling_part.emitting = true
 	
 	move_and_slide()
 
