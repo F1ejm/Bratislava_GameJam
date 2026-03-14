@@ -59,3 +59,9 @@ damping_max = 3.75
 scale_amount_min = 10.0
 scale_amount_max = 18.0
 color = Color(0.3366075, 0.33660766, 0.3366076, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1901980198]
+wait_time = 13.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

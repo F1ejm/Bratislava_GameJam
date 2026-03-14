@@ -99,7 +99,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			currentSPEED += (((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 20) * (1 + int(zooming))) - breakingforce
 		
-	breakingforce /= 1.3
 	if Global.hp > 0:
 		if (currentSPEED < minSPEED):
 			currentSPEED = minSPEED

@@ -34,4 +34,8 @@ texture = ExtResource("2_cbdgn")
 range_z_max = 20
 texture = SubResource("GradientTexture2D_3oapc")
 
+[node name="Timer" type="Timer" parent="." unique_id=1758387547]
+wait_time = 13.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

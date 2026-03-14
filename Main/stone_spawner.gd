@@ -16,6 +16,6 @@ func _on_timer_timeout() -> void:
 	var scene := preload("res://Main/Stone.tscn")
 	var stone := scene.instantiate()
 	$"../../StoneHolder".add_child(stone)
-	stone.global_position.x = get_parent().global_position.x + randf_range(-500,500)
+	stone.global_position.x = get_parent().global_position.x + randf_range(-1000,1000)
 	stone.global_position.y = get_parent().global_position.y + randf_range(1200,1500)
-	$Timer.wait_time = ((1 / (Global.currentSPEED / 20) * 25) * 1 + $"..".upgstone*0.1)
+	$Timer.wait_time = ((1 / (Global.currentSPEED / 15) * 25) * 1 + $"..".upgstone*0.1)

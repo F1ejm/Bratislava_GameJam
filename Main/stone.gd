@@ -25,3 +25,7 @@ func _process(delta: float) -> void:
 
 func _particle():
 	particle.emitting = true
+
+
+func _on_timer_timeout() -> void:
+	self.queue_free()
