@@ -227,7 +227,11 @@ stretch_mode = 4
 [node name="KillTime" type="Timer" parent="." unique_id=1841548939]
 wait_time = 2.0
 
+[node name="sound" type="Timer" parent="." unique_id=417870770]
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="KillTime" to="." method="_on_kill_time_timeout"]
+[connection signal="timeout" from="sound" to="." method="_on_sound_timeout"]

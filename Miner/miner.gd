@@ -193,13 +193,16 @@ func _input(event):
 	if event.is_action_pressed("Use_item") and !itemcooldown: 
 		match AciteveItem:
 			"Brakes":
+				$sound.start(1.97)
 				itemcooldown = true
 				breakingforce = 80
 				AudioManager.car_brake.play()
 				item_slot.fill_progress_bar(20)
 				await get_tree().create_timer(10).timeout
 				itemcooldown = false
+				
 			"Rock Smasher":
+				$sound.start(1.79)
 				itemcooldown = true
 				AudioManager.rock_break.play()
 				rocksmashing = true
@@ -209,7 +212,9 @@ func _input(event):
 				item_slot.fill_progress_bar(30)
 				await get_tree().create_timer(30).timeout
 				itemcooldown = false
+				
 			"SPEEEEEEED!!!":
+				$sound.start(2.39)
 				itemcooldown = true
 				AudioManager.speed_up.play()
 				maxSPEED = 1000
@@ -221,6 +226,7 @@ func _input(event):
 				item_slot.fill_progress_bar(15)
 				await get_tree().create_timer(15).timeout
 				itemcooldown = false
+				
 		#print(AciteveItem)
 
 func spawnTail(number: int):
@@ -255,7 +261,8 @@ func body_entered(body: Node2D) -> void:
 		KillTime.start()
 		if !rocksmashing:
 			iskra()
-			AudioManager.rock_hit.play()
+			if !AudioManager.rock_hit.playing:
+				AudioManager.rock_hit.play()
 			main.add_trauma(2)
 			Global.hp -= 1
 			if(Global.hp < 1):
@@ -277,3 +284,11 @@ func _on_kill_time_timeout() -> void:
 				isdieing = true
 		else:
 			KillTime.start()
+
+
+func _on_sound_timeout() -> void:
+	AudioManager.car_brake.playing = false
+	AudioManager.rock_break.playing = false
+	AudioManager.rock_hit.playing = false
+	AudioManager.speed_up.playing = false
+	
