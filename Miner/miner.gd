@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 		if(IsFalling):
 			currentSPEED += delta * 150
 		else:
-			currentSPEED += (((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 20) * (1 + int(zooming))) - breakingforce
+			currentSPEED += (((0.25 - (abs(self.rotation - (atan2(direction.y, direction.x)- PI/2)))) * delta * 30) * (1 + int(zooming))) - breakingforce
 		
 	if Global.hp > 0:
 		if (currentSPEED < minSPEED):
@@ -195,10 +195,11 @@ func _input(event):
 			"Brakes":
 				$sound.start(1.97)
 				itemcooldown = true
-				breakingforce = 80
+				breakingforce = 40
 				AudioManager.car_brake.play()
 				item_slot.fill_progress_bar(20)
 				await get_tree().create_timer(10).timeout
+				breakingforce = 0
 				itemcooldown = false
 				
 			"Rock Smasher":
