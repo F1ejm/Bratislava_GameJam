@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dk6fi336kvumd"]
 
-[ext_resource type="Script" path="res://UI/deathscreen.gd" id="1_sdug5"]
+[ext_resource type="Script" uid="uid://cgsmnylxk60gj" path="res://UI/deathscreen.gd" id="1_sdug5"]
 [ext_resource type="FontFile" uid="uid://ctn1df5bonn4v" path="res://UI/PressStart2P-Regular.ttf" id="2_xud1b"]
 [ext_resource type="Texture2D" uid="uid://iqbdyw4ljfx8" path="res://grafiki/ui/reset_normal.png" id="3_e1lxg"]
 [ext_resource type="Texture2D" uid="uid://clidjv5cloe5a" path="res://grafiki/ui/reset_pressed.png" id="4_buhvs"]

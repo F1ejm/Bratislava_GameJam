@@ -5,6 +5,9 @@ extends Control
 
 func _process(delta: float) -> void:
 	label.text  = str(int(Global.score))
+	if Global.hp <= 0:
+		visible = true
+	else: visible = false
 	
 
 
