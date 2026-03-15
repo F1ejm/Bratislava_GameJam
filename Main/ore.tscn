@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://uhbstf0hjg3w" path="res://grafiki/ore3.png" id="2_cbdgn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbdgn"]
-radius = 11.95
+radius = 15.777925
 
 [sub_resource type="Gradient" id="Gradient_cbdgn"]
 offsets = PackedFloat32Array(0, 0.7331731)
